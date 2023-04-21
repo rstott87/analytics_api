@@ -6,8 +6,8 @@ export default function Document() {
       <Head />
       <body>
         <Main />
-        <NextScript />
+        <NextScript strategy="beforeInteractive" />
       </body>
     </Html>
-  )
+  );
 }

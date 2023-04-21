@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import SignIn from "./signin";
 
 const inter = Inter({ subsets: ["latin"] });
 
