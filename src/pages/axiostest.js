@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
-import SearchForm from "@/SearchForm";
+import Form from "../components/Form";
+
+
 
 const baseURL =
   "https://www.googleapis.com/youtube/v3/channels?id=UC4fZeoNxAXfbIpT3swsVh9w&part=statistics";
@@ -33,16 +35,13 @@ export default function FetchTest() {
   //       });
   return (
     <div className="bg-slate-200 h-screen flex flex-col justify-center items-center">
-      {/* fancy search box styled in tailwind
-       */}
-
+        <Form />
       <div className="text-slate-800 border-2 border-black h-20 w-20">
         {views}
       </div>
       <div className="text-slate-800 border-2 border-black h-20 w-20">
         {subscribers}
       </div>
-      <SearchForm />
     </div>
   );
 }
