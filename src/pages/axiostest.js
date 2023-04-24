@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "../components/Form";
 
 const baseURL =
@@ -9,29 +9,31 @@ export default function FetchParent() {
   const [views, setViews] = useState("0");
   const [subscribers, setSubscribers] = useState("0");
   const [enteredSearchTerm, setEnteredSearchTerm] = useState("0");
-  //   axios
-  //       .get(
-  //         "https://www.googleapis.com/youtube/v3/channels?id=UC4fZeoNxAXfbIpT3swsVh9w&part=statistics",
-  //         {
-  //           params: {
-  //             key: "AIzaSyA03W4pd3Ud1hhp - Fb4qjVESiLNPMeIE8Y"
-  //           }
-  //         }
-  //       )
-  //       .then(function (response) {
-  //         // handle success
-  //         console.log(response.data.items[0].statistics.viewCount);
-  //         console.log(response.data.items[0].statistics.subscriberCount);
-  //           setViews(response.data.items[0].statistics.viewCount);
-  //           setSubscribers(response.data.items[0].statistics.subscriberCount);
-  //       })
-  //       .catch(function (error) {
-  //         // handle error
-  //         console.log(error);
-  //       })
-  //       .finally(function () {
-  //         // always executed
-  //       });
+    useEffect(() => {
+      axios
+        .get("https://www.googleapis.com/youtube/v3/channels", {
+          params: {
+            id: "UC4fZeoNxAXfbIpT3swsVh9w",
+            part: "statistics",
+            key: "AIzaSyA03W4pd3Ud1hhp - Fb4qjVESiLNPMeIE8Y"
+          }
+        })
+        .then(function (response) {
+          // handle success
+          console.log(response.data);
+          // console.log(response.data.items[0].statistics.viewCount);
+          // console.log(response.data.items[0].statistics.subscriberCount);
+          setViews(response.data.items[0].statistics.viewCount);
+          setSubscribers(response.data.items[0].statistics.subscriberCount);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+        .finally(function () {
+          // always executed
+        });
+    }, [enteredSearchTerm]);
   return (
     <div className="bg-slate-200 h-screen flex flex-col justify-center items-center">
       <Form setEnteredSearchTerm={setEnteredSearchTerm}/>
