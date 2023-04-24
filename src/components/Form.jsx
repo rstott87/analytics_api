@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-function Form() {
+function Form(props) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
-    console.log(searchTerm);
+
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(searchTerm);
+    props.setEnteredSearchTerm(searchTerm);
     setSearchTerm("");
   };
 

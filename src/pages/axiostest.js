@@ -2,15 +2,14 @@ import axios from "axios";
 import { useState } from "react";
 import Form from "../components/Form";
 
-
-
 const baseURL =
   "https://www.googleapis.com/youtube/v3/channels?id=UC4fZeoNxAXfbIpT3swsVh9w&part=statistics";
 
-export default function FetchTest() {
+export default function FetchParent() {
   const [views, setViews] = useState("0");
   const [subscribers, setSubscribers] = useState("0");
-    //   axios
+  const [enteredSearchTerm, setEnteredSearchTerm] = useState("0");
+  //   axios
   //       .get(
   //         "https://www.googleapis.com/youtube/v3/channels?id=UC4fZeoNxAXfbIpT3swsVh9w&part=statistics",
   //         {
@@ -35,7 +34,7 @@ export default function FetchTest() {
   //       });
   return (
     <div className="bg-slate-200 h-screen flex flex-col justify-center items-center">
-        <Form />
+      <Form setEnteredSearchTerm={setEnteredSearchTerm}/>
       <div className="text-slate-800 border-2 border-black h-20 w-20">
         {views}
       </div>
