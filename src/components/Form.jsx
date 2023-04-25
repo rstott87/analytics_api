@@ -9,7 +9,8 @@ function Form(props) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.setEnteredSearchTerm(searchTerm);
+    props.setEnteredSearchTerm( prevValue=> {
+      return searchTerm});
     setSearchTerm("");
   };
 
