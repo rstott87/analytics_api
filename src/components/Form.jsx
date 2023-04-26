@@ -8,32 +8,33 @@ function Form(props) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(props)
     console.log(searchTerm);
-    axios.get("https://www.googleapis.com/youtube/v3/search", {
-           params: {
-             q: searchTerm,
-             part: "snippet",
-             key: "AIzaSyA03W4pd3Ud1hhp - Fb4qjVESiLNPMeIE8Y"
-           }
-         })
-         .then(function (response) {
-           // handle success
-           console.log(response)
-           console.log(response.data.items[0].snippet.channelTitle);
-           // console.log(response.data.items[0].statistics.viewCount);
-           // console.log(response.data.items[0].statistics.subscriberCount);
-           // setViews(response.data.items[0].statistics.viewCount);
-           // setSubscribers(response.data.items[0].statistics.subscriberCount);
-            setTitleOfChannel(response.data.items[0].snippet.channelTitle)
+    // axios.get("https://www.googleapis.com/youtube/v3/search", {
+    //        params: {
+    //          q: searchTerm,
+    //          part: "snippet",
+    //          key: "AIzaSyA03W4pd3Ud1hhp - Fb4qjVESiLNPMeIE8Y"
+    //        }
+    //      })
+    //      .then(function (response) {
+    //        // handle success
+    //        console.log(response)
+    //        console.log(response.data.items[0].snippet.channelTitle);
+    //        console.log(response.data.items[0].statistics.viewCount);
+    //        console.log(response.data.items[0].statistics.subscriberCount);
+    //        props.setViews(response.data.items[0].statistics.viewCount);
+    //        props.setSubscribers(response.data.items[0].statistics.subscriberCount);
+    //        props.ssetTitleOfChannel(response.data.items[0].snippet.channelTitle)
 
-         })
-         .catch(function (error) {
-           // handle error
-           console.log(error);
-         })
-         .finally(function () {
-           // always executed 
-          })
+    //      })
+    //      .catch(function (error) {
+    //        // handle error
+    //        console.log(error);
+    //      })
+    //      .finally(function () {
+    //        // always executed 
+    //       })
 
     props.setEnteredSearchTerm((prevValue) => {
       return searchTerm;
@@ -43,11 +44,11 @@ function Form(props) {
 
   return (
     <form>
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-2 text-2xl font-bold">
         <input
           onChange={handleChange}
           value={searchTerm}
-          className="border-2 border-red-600 rounded-md"
+          className="border-2 p-2 border-red-600 rounded-md"
           type="text"
         />
         <input

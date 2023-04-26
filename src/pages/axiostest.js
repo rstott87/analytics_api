@@ -10,7 +10,7 @@ export default function FetchParent() {
   const [subscribers, setSubscribers] = useState("0");
   const [searchTerm, setSearchTerm] = useState("");
   const [enteredSearchTerm, setEnteredSearchTerm] = useState("Place Holder");
-  const [titleOfChannel, setTitleOfChannel] = useState("Joe Rogan");
+  const [titleOfChannel, setTitleOfChannel] = useState("");
   
   // useEffect(() => {
   //   axios
@@ -45,14 +45,18 @@ export default function FetchParent() {
 
   return (
     <div className="bg-slate-200 h-screen flex flex-col justify-center items-center">
-      <Form setEnteredSearchTerm={setEnteredSearchTerm} enteredSearchTerm={enteredSearchTerm}/>
-      <div className="text-slate-800 border-2 border-black h-20 w-20">
-        {views}
+      <Form
+        setViews={setViews}
+        setSubscribers={setSubscribers}
+        setTitleOfChannel={setTitleOfChannel}
+        setEnteredSearchTerm={setEnteredSearchTerm}
+        enteredSearchTerm={enteredSearchTerm}
+      />
+      <div className="text-2xl font-black ">
+        <div>Name of Channel: {titleOfChannel}</div>
+        <div className="text-slate-800 border-2 ">Views: {views}</div>
+        <div className="text-slate-800 border-2">Subscriptions: {subscribers}</div>
       </div>
-      <div className="text-slate-800 border-2 border-black h-20 w-20">
-        {subscribers}
-      </div>
-      <div>TITLE: {titleOfChannel}</div>
     </div>
   );
 }
