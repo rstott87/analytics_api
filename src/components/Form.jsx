@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import channelID from "@/data/channelIDs";
 
 function Form(props) {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResponse, setSearchResponse] = useState([]);
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(props)
     console.log(searchTerm);
+    console.log(channelID.mssp);
     // axios.get("https://www.googleapis.com/youtube/v3/search", {
     //        params: {
     //          q: searchTerm,
@@ -19,6 +21,7 @@ function Form(props) {
     //      })
     //      .then(function (response) {
     //        // handle success
+    //        setSearchResponse(response)
     //        console.log(response)
     //        console.log(response.data.items[0].snippet.channelTitle);
     //        console.log(response.data.items[0].statistics.viewCount);
@@ -33,8 +36,31 @@ function Form(props) {
     //        console.log(error);
     //      })
     //      .finally(function () {
-    //        // always executed 
+    //        // always executed
     //       })
+
+    axios
+      .get("https://www.googleapis.com/youtube/v3/channels", {
+        params: {
+          q: searchTerm,
+          id: "UC4fZeoNxAXfbIpT3swsVh9w, UCzQUP1qoWDoEbmsQxvdjxgQ, UCIyIoM_Nd8HtY19fuR_ov2A, UCy6A9WMN43DrtBkID7nMXJw, UCSHZKyawb77ixDdsGog4iWA",
+          part: "statistics, snippet",
+          key: "AIzaSyA03W4pd3Ud1hhp - Fb4qjVESiLNPMeIE8Y"
+        }
+      })
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+        setSearchResponse(response.data.items);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
+    
 
     props.setEnteredSearchTerm((prevValue) => {
       return searchTerm;
@@ -42,6 +68,10 @@ function Form(props) {
     setSearchTerm("");
   };
 
+  const listOfTitles = searchResponse.map((item) => item.snippet.title)
+  
+
+  console.log(listOfTitles)
   return (
     <form>
       <div className="flex flex-col gap-2 text-2xl font-bold">
