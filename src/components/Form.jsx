@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import channelID from "@/data/channelIDs";
+import channelSchema from "../data/channelSchema";
 
 function Form(props) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResponse, setSearchResponse] = useState([]);
+  const [searchResponse, setSearchResponse] = useState(channelSchema.items);
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -60,7 +61,6 @@ function Form(props) {
       .finally(function () {
         // always executed
       });
-    
 
     props.setEnteredSearchTerm((prevValue) => {
       return searchTerm;
@@ -68,10 +68,11 @@ function Form(props) {
     setSearchTerm("");
   };
 
-  const listOfTitles = searchResponse.map((item) => item.snippet.title)
-  
+  const listOfTitles = searchResponse.map((item, index) => (
+    <li key={index}>{item.snippet.title}</li>
+  ));
+  console.log(listOfTitles);
 
-  console.log(listOfTitles)
   return (
     <form>
       <div className="flex flex-col gap-2 text-2xl font-bold">
@@ -88,6 +89,7 @@ function Form(props) {
           value="Search"
         />
       </div>
+      <ul>{listOfTitles}</ul>
     </form>
   );
 }
