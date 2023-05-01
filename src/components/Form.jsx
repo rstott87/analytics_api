@@ -5,7 +5,7 @@ import channelSchema from "../data/channelSchema";
 
 function Form(props) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResponse, setSearchResponse] = useState(channelSchema.items);
+  const [enteredSearchTerm, setEnteredSearchTerm] = useState("");
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -13,32 +13,7 @@ function Form(props) {
     e.preventDefault();
     console.log(searchTerm);
     console.log(channelID.mssp);
-    // axios.get("https://www.googleapis.com/youtube/v3/search", {
-    //        params: {
-    //          q: searchTerm,
-    //          part: "snippet",
-    //          key: "AIzaSyA03W4pd3Ud1hhp - Fb4qjVESiLNPMeIE8Y"
-    //        }
-    //      })
-    //      .then(function (response) {
-    //        // handle success
-    //        setSearchResponse(response)
-    //        console.log(response)
-    //        console.log(response.data.items[0].snippet.channelTitle);
-    //        console.log(response.data.items[0].statistics.viewCount);
-    //        console.log(response.data.items[0].statistics.subscriberCount);
-    //        props.setViews(response.data.items[0].statistics.viewCount);
-    //        props.setSubscribers(response.data.items[0].statistics.subscriberCount);
-    //        props.ssetTitleOfChannel(response.data.items[0].snippet.channelTitle)
-
-    //      })
-    //      .catch(function (error) {
-    //        // handle error
-    //        console.log(error);
-    //      })
-    //      .finally(function () {
-    //        // always executed
-    //       })
+   
 
     axios
       .get("https://www.googleapis.com/youtube/v3/channels", {
@@ -52,7 +27,7 @@ function Form(props) {
       .then(function (response) {
         // handle success
         console.log(response.data);
-        setSearchResponse(response.data.items);
+        props.setSearchResponse(response.data.items);
       })
       .catch(function (error) {
         // handle error
@@ -62,19 +37,14 @@ function Form(props) {
         // always executed
       });
 
-    props.setEnteredSearchTerm((prevValue) => {
+      setEnteredSearchTerm((prevValue) => {
       return searchTerm;
     });
     setSearchTerm("");
   };
 
-  const listOfTitles = searchResponse.map((item, index) => (
-    <li key={index}>{item.snippet.title}</li>
-  ));
-  console.log(listOfTitles);
-
   return (
-    <form>
+    <form className="p-10">
       <div className="flex flex-col gap-2 text-2xl font-bold">
         <input
           onChange={handleChange}
@@ -89,7 +59,6 @@ function Form(props) {
           value="Search"
         />
       </div>
-      <ul>{listOfTitles}</ul>
     </form>
   );
 }
