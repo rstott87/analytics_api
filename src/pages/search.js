@@ -25,7 +25,7 @@ export default function FetchParent() {
   
 
   return (
-    <div className="bg-slate-200 h-screen flex flex-col  items-center">
+    <div className="bg-slate-200 flex flex-col  items-center">
       <Form
         setSearchResponse={setSearchResponse}
       />

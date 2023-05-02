@@ -59,6 +59,7 @@ function Form(props) {
           value="Search"
         />
       </div>
+
     </form>
   );
 }
