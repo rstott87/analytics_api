@@ -12,6 +12,7 @@ function Card(props) {
             alt={""}
           />
         </div>
+        
         <div>
             <p className="text-2xl">Views: {props.viewCount}</p>
             <p className="text-2xl">Videos: {props.videoCount}</p>
