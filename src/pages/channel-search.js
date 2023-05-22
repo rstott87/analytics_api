@@ -8,7 +8,7 @@ import CardDisplay from "../components/CardDisplay";
 const baseURL =
   "https://www.googleapis.com/youtube/v3/channels?id=UC4fZeoNxAXfbIpT3swsVh9w&part=statistics";
 
-export default function FetchParent() {
+export default function ChannelSearch() {
   const [searchResponse, setSearchResponse] = useState(channelSchema.items);
   
     const listOfPodcastCards = searchResponse.map((item) => (
