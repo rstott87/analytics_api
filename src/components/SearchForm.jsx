@@ -3,7 +3,7 @@ import axios from "axios";
 import channelID from "@/data/channelIDs";
 import channelSchema from "../data/channelSchema";
 
-function Form(props) {
+function SearchForm(props) {
   const [searchTerm, setSearchTerm] = useState("");
   const [enteredSearchTerm, setEnteredSearchTerm] = useState("");
   const handleChange = (e) => {
@@ -63,4 +63,4 @@ function Form(props) {
   );
 }
 
-export default Form;
+export default SearchForm;

@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import channelSchema from "../data/channelSchema";
-import Form from "../components/Form";
-import Card from "../components/Card";
-import Results from "../components/Results";
+import SearchForm from "../components/SearchForm";
+import PodcastCard from "../components/PodcastCard";
+import CardDisplay from "../components/CardDisplay";
 
 const baseURL =
   "https://www.googleapis.com/youtube/v3/channels?id=UC4fZeoNxAXfbIpT3swsVh9w&part=statistics";
@@ -11,8 +11,8 @@ const baseURL =
 export default function FetchParent() {
   const [searchResponse, setSearchResponse] = useState(channelSchema.items);
   
-    const listOfPodcasts = searchResponse.map((item) => (
-      <Card
+    const listOfPodcastCards = searchResponse.map((item) => (
+      <PodcastCard
         key={item.id}
         className="text-2xl"
         title={item.snippet.title}
@@ -26,10 +26,10 @@ export default function FetchParent() {
 
   return (
     <div className="bg-slate-200 flex flex-col  items-center">
-      <Form
+      <SearchForm
         setSearchResponse={setSearchResponse}
       />
-      <Results listOfPodcasts={listOfPodcasts}/>
+      <CardDisplay listOfPodcastCards={listOfPodcastCards}/>
     </div>
   );
 }
