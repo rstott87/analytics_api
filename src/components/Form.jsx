@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import axios from "axios";
 import channelID from "@/data/channelIDs";
 import channelSchema from "../data/channelSchema";
@@ -13,13 +13,12 @@ function Form(props) {
     e.preventDefault();
     console.log(searchTerm);
     console.log(channelID.mssp);
-   
-
+    console.log(enteredSearchTerm);
+    //UC4fZeoNxAXfbIpT3swsVh9w
     axios
       .get("https://www.googleapis.com/youtube/v3/channels", {
         params: {
-          q: searchTerm,
-          id: "UC4fZeoNxAXfbIpT3swsVh9w, UCzQUP1qoWDoEbmsQxvdjxgQ, UCIyIoM_Nd8HtY19fuR_ov2A, UCy6A9WMN43DrtBkID7nMXJw, UCSHZKyawb77ixDdsGog4iWA",
+          id: searchTerm,
           part: "statistics, snippet",
           key: "AIzaSyA03W4pd3Ud1hhp - Fb4qjVESiLNPMeIE8Y"
         }
@@ -37,7 +36,7 @@ function Form(props) {
         // always executed
       });
 
-      setEnteredSearchTerm((prevValue) => {
+    setEnteredSearchTerm((prevValue) => {
       return searchTerm;
     });
     setSearchTerm("");

@@ -19,10 +19,10 @@ export default function FetchParent() {
         videoCount={item.statistics.videoCount}
         viewCount={item.statistics.viewCount}
         thumbnail={item.snippet.thumbnails.medium.url}
+        subscriberCount={item.statistics.subscriberCount}
+        description={item.snippet.description}
       />
     ));
-    console.log(listOfPodcasts);
-  
 
   return (
     <div className="bg-slate-200 flex flex-col  items-center">
