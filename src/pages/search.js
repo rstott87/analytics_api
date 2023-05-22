@@ -23,8 +23,6 @@ export default function FetchParent() {
         description={item.snippet.description}
       />
     ));
-    console.log(listOfPodcasts);
-  
 
   return (
     <div className="bg-slate-200 flex flex-col  items-center">
