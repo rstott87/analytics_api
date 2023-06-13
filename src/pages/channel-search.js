@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import channelSchema from "../data/channelSchema";
 import SearchForm from "../components/SearchForm";
-import PodcastCard from "../components/PodcastCard";
+import PodcastCard from "../components/ChannelCard";
 import CardDisplay from "../components/CardDisplay";
 
 const baseURL =

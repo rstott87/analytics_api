@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-function PodcastCard(props) {
+function ChannelCard(props) {
   return (
     <div className=" p-6 mb-6 shadow-lg shadow-slate-600 flex flex-col gap-3 text-slate-300 bg-slate-700 rounded-lg border-2 text-center border-slate-900">
       <p className="text-4xl">{props.title}</p>
@@ -8,7 +8,7 @@ function PodcastCard(props) {
         {/* <img
           className="border-4 border-slate-200 rounded-full shadow-xl shadow-slate-900"
           src={props.thumbnail}
-          width={230}
+          width={230
           height={10}
           alt={""}
         /> */}
@@ -22,4 +22,4 @@ function PodcastCard(props) {
   );
 }
 
-export default PodcastCard;
+export default ChannelCard;
