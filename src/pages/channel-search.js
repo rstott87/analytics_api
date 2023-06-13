@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import channelSchema from "../data/channelSchema";
 import SearchForm from "../components/SearchForm";
-import PodcastCard from "../components/PodcastCard";
+import ChannelCard from "../components/ChannelCard";
 import CardDisplay from "../components/CardDisplay";
 
 const baseURL =
@@ -12,7 +12,7 @@ export default function ChannelSearch() {
   const [searchResponse, setSearchResponse] = useState(channelSchema.items);
   
     const listOfPodcastCards = searchResponse.map((item) => (
-      <PodcastCard
+      <ChannelCard
         key={item.id}
         className="text-2xl"
         title={item.snippet.title}
@@ -25,7 +25,7 @@ export default function ChannelSearch() {
     ));
 
   return (
-    <div className="bg-slate-200 flex flex-col  items-center">
+    <div className="bg-slate-100 flex flex-col items-center">
       <SearchForm
         setSearchResponse={setSearchResponse}
       />
