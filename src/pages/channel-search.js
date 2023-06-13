@@ -25,7 +25,7 @@ export default function ChannelSearch() {
     ));
 
   return (
-    <div className="bg-slate-200 flex flex-col  items-center">
+    <div className="bg-slate-100 flex flex-col items-center">
       <SearchForm
         setSearchResponse={setSearchResponse}
       />
