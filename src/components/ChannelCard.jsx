@@ -1,4 +1,5 @@
 import Image from "next/image";
+import StatCard from "./StatCard";
 
 function ChannelCard(props) {
   return (
@@ -15,8 +16,13 @@ function ChannelCard(props) {
       </div>
 
       <div>
-        <p className="text-2xl">Views: {props.viewCount}</p>
-        <p className="text-2xl">Videos: {props.videoCount}</p>
+        {/* modern card that displays stats and data */}
+        <StatCard
+          title={"Total Subscribers"}
+          count={props.subscriberCount}
+        />
+        <StatCard title={"Total Videos"} count={props.videoCount} />
+        <StatCard title={"Total Views"} count={props.viewCount} />
       </div>
     </div>
   );
