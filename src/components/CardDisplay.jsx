@@ -1,6 +1,6 @@
 function CardDisplay (props) {
     return (
-      <div>
+      <div className="p-10 md:p-20 w-full min-w-min">
         <ul>{props.listOfPodcastCards}</ul>
       </div>
     );
