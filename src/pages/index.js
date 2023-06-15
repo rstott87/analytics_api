@@ -2,15 +2,18 @@ import Link from "next/link";
 import { Inter } from "next/font/google";
 import SignIn from "./signin";
 
+
 const inter = Inter({ subsets: ["latin"] });
+
+console.log((process.env.NEXT_PUBLIC_DB_HOST));
+
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-evenly p-24">
       <h1 className="text-6xl font-bold text-center">
         {" "}
-        Welcome to my 
-        Insights by FCR Analytics!
+        Welcome to my Insights by FCR Analytics!
       </h1>
 
       <Link href="/channel-search">
