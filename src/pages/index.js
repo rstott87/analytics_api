@@ -5,7 +5,6 @@ import SignIn from "./signin";
 
 const inter = Inter({ subsets: ["latin"] });
 
-console.log((process.env.NEXT_PUBLIC_DB_HOST));
 
 
 export default function Home() {
