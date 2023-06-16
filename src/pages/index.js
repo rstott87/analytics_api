@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Inter } from "next/font/google";
 import SignIn from "./signin";
+import NavBar from "../components/NavBar";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -9,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="bg-black flex min-h-screen flex-col items-center justify-evenly p-6">
+    <div className="bg-black flex min-h-screen flex-col items-center justify-evenly p-6">
       <div className="text-6xl text-neutral-100 font-extrabold flex flex-col gap-4">
         {" "}
         <div className="p-4">
@@ -18,11 +19,11 @@ export default function Home() {
           <p>Real-Time.</p>
         </div>
         <div>
-          <p className="text-2xl font-light text-slate-400 text-center leading-8">
+          <p className="text-xl font-light text-slate-400 text-center leading-8 px-2">
             {" "}
             An intuitive and user-friendly platform that allows
             you to access detailed data and insightful analytics for any YouTube
-            channel.
+            channel by leveraging the power of AI.
           </p>
         </div>
       </div>
@@ -33,6 +34,6 @@ export default function Home() {
           Get Started
         </h1>
       </Link>
-    </main>
+    </div>
   );
 }
