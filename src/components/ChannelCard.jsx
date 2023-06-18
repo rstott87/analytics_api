@@ -3,8 +3,16 @@ import StatCard from "./StatCard";
 
 function ChannelCard(props) {
   return (
-    <div className="w-full p-6 mb-6 shadow-lg shadow-slate-600 flex flex-col gap-3 text-slate-300 bg-slate-200 rounded-lg border text-center border-slate-300">
-      <p className=" text-slate-800 font-semibold text-3xl">{props.title}</p>
+    <div className="mb-6 flex w-full flex-col gap-3 rounded-lg border border-slate-300 bg-slate-200 p-6 text-center text-slate-300 shadow-lg shadow-slate-600">
+      <Image
+        className="rounded-full border-4 border-slate-800 shadow-lg shadow-slate-500"
+        src={props.channelPhoto}
+        width={100}
+        height={100}
+        alt="Picture of the author"
+      />
+
+      <p className=" text-3xl font-semibold text-slate-800">{props.title}</p>
       <div className="flex justify-center">
         {/* <img
           className="border-4 border-slate-200 rounded-full shadow-xl shadow-slate-900"
@@ -15,7 +23,7 @@ function ChannelCard(props) {
         /> */}
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-2">
+      <div className="grid gap-2 lg:grid-cols-3">
         <StatCard
           title={"Total Subscribers"}
           count={props.subscriberCount}
