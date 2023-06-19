@@ -43,20 +43,20 @@ function SearchForm(props) {
   };
 
   return (
-    <form className="p-10">
+    <form className="p-8">
       <div className="flex flex-col gap-2 text-2xl font-bold">
-        <p>Enter YouTube Channel ID Below</p>
+        <p className="text-center text-2xl font-bold">Enter YouTube Channel ID</p>
         <input
           onChange={handleChange}
           value={searchTerm}
-          className="border-2 p-2 border-red-600 rounded-md"
+          className="border-2 p-2 border-slate-400 rounded-md"
           type="text"
         />
         <input
           type="submit"
           onClick={handleSubmit}
           className="border-2 bg-blue-400 border-blue-200 rounded-lg"
-          value="GO"
+          value="Search"
         />
       </div>
 
