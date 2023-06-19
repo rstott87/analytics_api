@@ -1,11 +1,11 @@
 import '@/styles/globals.css'
 import Script from 'next/script'
+import Layout from "../components/layout";
 
 export default function App({ Component, pageProps }) {
   return (
-    <div>
-      <Script src="https://apis.google.com/js/api.js" />
+    <Layout>
       <Component {...pageProps} />
-    </div>
+    </Layout>
   );
 }

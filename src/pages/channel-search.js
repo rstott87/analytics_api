@@ -16,9 +16,9 @@ export default function ChannelSearch() {
         key={item.id}
         className="text-2xl"
         title={item.snippet.title}
+        channelPhoto={item.snippet.thumbnails.medium.url}
         videoCount={item.statistics.videoCount}
         viewCount={item.statistics.viewCount}
-        thumbnail={item.snippet.thumbnails.medium.url}
         subscriberCount={item.statistics.subscriberCount}
         description={item.snippet.description}
       />
