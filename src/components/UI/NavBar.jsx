@@ -1,9 +1,14 @@
 import HambugerMenu from "./HamburgerMenu";
+import Image from "next/image";
+import crown from "src/images/crown.svg";
 
 function NavBar(props) {
   return (
-    <div className="space-between nav-bar sticky top-0 z-50 flex justify-between border-none bg-black p-4 pl-8 text-xl font-extrabold text-neutral-300 shadow-md">
-      <p>FCR Analytics</p>
+    <div className="space-between nav-bar sticky top-0 z-50 flex justify-between border-none bg-black px-3 p-2 text-xl font-extrabold text-neutral-300 shadow-md">
+      <div className="flex gap-2 items-center">
+        <Image src={crown} alt="StatCrown Logo" width={25} height={25} />
+        <p>StatCrown</p>
+      </div>
       <HambugerMenu />
     </div>
   );
