@@ -20,7 +20,7 @@ function SearchForm(props) {
         params: {
           id: searchTerm,
           part: "statistics, snippet",
-          key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY,
+          key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
         }
       })
       .then(function (response) {
@@ -43,23 +43,22 @@ function SearchForm(props) {
   };
 
   return (
-    <form className="p-8">
-      <div className="flex flex-col gap-2 text-2xl font-bold">
-        <p className="text-center text-2xl font-bold">Enter YouTube Channel ID</p>
+    <form className="py-8">
+      <div className="flex flex-col gap-2">
         <input
           onChange={handleChange}
           value={searchTerm}
-          className="border-2 p-2 border-slate-400 rounded-md"
+          placeholder="YouTube Channel ID"
+          className="text-xl rounded-full border border-slate-900 py-3 px-8 font-bold shadow-lg shadow-violet-200"
           type="text"
         />
         <input
           type="submit"
           onClick={handleSubmit}
-          className="border-2 bg-blue-400 border-blue-200 rounded-lg"
+          className="font-semiboldf rounded-lg border text-2xl border-blue-900 bg-slate-900 p-1 text-neutral-200 shadow-lg shadow-violet-200"
           value="Search"
         />
       </div>
-
     </form>
   );
 }
