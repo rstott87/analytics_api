@@ -4,9 +4,9 @@ import crown from "src/images/crown.svg";
 
 function NavBar(props) {
   return (
-    <div className="space-between nav-bar sticky top-0 z-50 flex justify-between border-none bg-black px-4 p-2 pt-3 text-xl font-extrabold text-neutral-300 shadow-md">
-      <div className="flex gap-2 items-center">
-        <Image src={crown} alt="StatCrown Logo" width={25} height={25} />
+    <div className="space-between nav-bar sticky top-0 z-50 flex justify-between  border-none bg-black p-5 tracking-wider text-2xl font-extrabold text-neutral-200">
+      <div className="flex items-center gap-2">
+        <Image src={crown} alt="StatCrown Logo" width={30} height={25} />
         <p>StatCrown</p>
       </div>
       <HambugerMenu />
