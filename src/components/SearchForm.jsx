@@ -20,7 +20,7 @@ function SearchForm(props) {
         params: {
           id: searchTerm,
           part: "statistics, snippet",
-          key: "AIzaSyA03W4pd3Ud1hhp - Fb4qjVESiLNPMeIE8Y"
+          key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY,
         }
       })
       .then(function (response) {
