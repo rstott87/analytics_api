@@ -4,6 +4,8 @@ import SignIn from "./signin";
 import NavBar from "../components/UI/NavBar";
 import Example from "../components/Example";
 import Head from "next/head";
+import analyticsImage_2 from "src/images/Analytics_Dashboard_2.png";
+import analyticsImage from "src/images/Analytics_Dashboard.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,11 +30,19 @@ export default function Home() {
         <Link href="/channel-search">
           <p className="rounded-full bg-neutral-200 px-4 py-2 text-xl font-normal text-slate-900 shadow-md shadow-purple-500">
             {`Get Started`}
-          </p>{" "}
+          </p>
         </Link>
       </section>
-      <Example title={"Placeholder One"} />
-      <Example title={"Placeholder Two"} />
+      <Example
+        image={analyticsImage}
+        title={
+          "Easily Compare Crucial Metrics Across Multiple Channels in Seconds"
+        }
+      />
+      <Example
+        image={analyticsImage_2}
+        title={"Explore Competitors' Trends and Compare to Your Own"}
+      />
     </div>
   );
 }
