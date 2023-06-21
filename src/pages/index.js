@@ -41,7 +41,7 @@ export default function Home() {
       />
       <Example
         image={analyticsImage_2}
-        title={"Explore Competitors' Trends and Compare to Your Own"}
+        title={"Explore Competitors' Trends"}
       />
     </div>
   );
