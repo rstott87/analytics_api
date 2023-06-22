@@ -13,6 +13,12 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center bg-black px-8 py-12 pt-32 text-center">
       <Head>
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
         <title>
           StatCrown | Simplify YouTube Stats and Analytics for Powerful Insights
         </title>
@@ -46,7 +52,12 @@ export default function Home() {
           "Streamline Your YouTube Analytics Experience: Compare Crucial Metrics Across Multiple Channels in Seconds with our Powerful YouTube API Integration"
         }
       />
-      <Example image={analyticsImage_2} title={"Uncover Your Competition's Secrets: Gain a Competitive Edge by Analyzing and Benchmarking Key Metrics of Other YouTube Channels with Easen"} />
+      <Example
+        image={analyticsImage_2}
+        title={
+          "Uncover Your Competition's Secrets: Gain a Competitive Edge by Analyzing and Benchmarking Key Metrics of Other YouTube Channels with Easen"
+        }
+      />
     </div>
   );
 }
