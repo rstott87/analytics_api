@@ -1,10 +1,11 @@
 import axios from "axios";
+import Head from "next/head";
 import { useState, useEffect } from "react";
 import channelSchema from "../data/channelSchema";
 import SearchForm from "../components/SearchForm";
 import ChannelCard from "../components/ChannelCard";
 import CardDisplay from "../components/CardDisplay";
-import Head from "next/head";
+
 
 const baseURL =
   "https://www.googleapis.com/youtube/v3/channels?id=UC4fZeoNxAXfbIpT3swsVh9w&part=statistics";
@@ -17,7 +18,7 @@ export default function ChannelSearch() {
         key={item.id}
         className="text-2xl"
         title={item.snippet.title}
-        channelPhoto={item.snippet.thumbnails.medium.url}
+        channelPhoto={item.snippet.thumbnails.default.url}
         videoCount={item.statistics.videoCount}
         viewCount={item.statistics.viewCount}
         subscriberCount={item.statistics.subscriberCount}
