@@ -15,10 +15,10 @@ export default function Home() {
       <Head>
         <link
           rel="icon"
-          href="/icon?<generated>"
-          type="image/<generated>"
-          sizes="<generated>"
-        />
+          href="src/images/icon.svg"
+          type="image/svg+xml"
+          sizes="800x800"
+        ></link>
         <title>
           StatCrown | Simplify YouTube Stats and Analytics for Powerful Insights
         </title>
