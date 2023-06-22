@@ -46,12 +46,7 @@ export default function Home() {
           "Streamline Your YouTube Analytics Experience: Compare Crucial Metrics Across Multiple Channels in Seconds with our Powerful YouTube API Integration"
         }
       />
-      <Example
-        image={analyticsImage_2}
-        title={
-          "Gain a Competitive Edge by Analyzing and Benchmarking Key Metrics of Other YouTube Channels with Ease"
-        }
-      />
+      <Example image={analyticsImage_2} title={"Uncover Your Competition's Secrets: Gain a Competitive Edge by Analyzing and Benchmarking Key Metrics of Other YouTube Channels with Easen"} />
     </div>
   );
 }
