@@ -28,10 +28,12 @@ export default function ChannelSearch() {
   return (
     <div className="flex flex-col items-center bg-slate-100">
       <Head>
-        <title>StatCrown: gSearch for Any Youtube Channel to Return Stats</title>
+        <title>
+          YouTube Channel Stats Search Tool | Analyze and Track Video Metrics
+        </title>
         <meta
           name="description"
-          content="The search form to find stats on any youtube channel"
+          content="Discover powerful YouTube channel stats search tool. Track and analyze video metrics, engagement, and subscribers. Boost your content strategy!"
           key="desc"
         ></meta>
       </Head>

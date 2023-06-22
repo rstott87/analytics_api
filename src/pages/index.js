@@ -14,7 +14,11 @@ export default function Home() {
     <div className="flex flex-col items-center bg-black px-8 py-12 pt-32 text-center">
       <Head>
         <title>StatCrown: YouTube Stats and Analytics Simplified</title>
-        <meta name="description" content="A new way to get youtube stats and analytics with simple, to easy understand charts and visualizationsnp" key="desc"></meta>
+        <meta
+          name="description"
+          content="Unlock YouTube stats and analytics with intuitive charts and visualizations. Get valuable insights for informed decision-making. Discover a new way to track video performance. Boost your YouTube strategy!"
+          key="desc"
+        ></meta>
       </Head>
       <section className="max-w-md pb-6 text-6xl ">
         <div className="px-4 text-5xl font-bold  text-neutral-300 ">
@@ -40,10 +44,7 @@ export default function Home() {
           "Easily Compare Crucial Metrics Across Multiple Channels in Seconds"
         }
       />
-      <Example
-        image={analyticsImage_2}
-        title={"Explore Competitors' Trends"}
-      />
+      <Example image={analyticsImage_2} title={"Explore Competitors' Trends"} />
     </div>
   );
 }
