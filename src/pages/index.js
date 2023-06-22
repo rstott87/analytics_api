@@ -13,12 +13,6 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center bg-black px-8 py-12 pt-32 text-center">
       <Head>
-        <link
-          rel="icon"
-          href="src/images/icon.svg"
-          type="image/svg+xml"
-          sizes="800x800"
-        ></link>
         <title>
           StatCrown | Simplify YouTube Stats and Analytics for Powerful Insights
         </title>

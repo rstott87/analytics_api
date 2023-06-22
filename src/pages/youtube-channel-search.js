@@ -29,6 +29,12 @@ export default function ChannelSearch() {
   return (
     <div className="flex flex-col items-center bg-slate-100">
       <Head>
+        {/* <link
+          rel="icon"
+          href="../images/icon.ico"
+          type="image/svg+xml"
+          sizes="800x800"
+        ></link> */}
         <title>
           YouTube Channel Stats Search Tool | Analyze and Track Video Metrics
         </title>
