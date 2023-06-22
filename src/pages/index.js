@@ -13,7 +13,9 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center bg-black px-8 py-12 pt-32 text-center">
       <Head>
-        <title>StatCrown: YouTube Stats and Analytics Simplified</title>
+        <title>
+          StatCrown | Simplify YouTube Stats and Analytics for Powerful Insights
+        </title>
         <meta
           name="description"
           content="Unlock YouTube stats and analytics with intuitive charts and visualizations. Get valuable insights for informed decision-making. Discover a new way to track video performance. Boost your YouTube strategy!"
@@ -41,10 +43,15 @@ export default function Home() {
       <Example
         image={analyticsImage}
         title={
-          "Easily Compare Crucial Metrics Across Multiple Channels in Seconds"
+          "Streamline Your YouTube Analytics Experience: Compare Crucial Metrics Across Multiple Channels in Seconds with our Powerful YouTube API Integration"
         }
       />
-      <Example image={analyticsImage_2} title={"Explore Competitors' Trends"} />
+      <Example
+        image={analyticsImage_2}
+        title={
+          "Gain a Competitive Edge by Analyzing and Benchmarking Key Metrics of Other YouTube Channels with Ease"
+        }
+      />
     </div>
   );
 }
