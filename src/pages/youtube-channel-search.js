@@ -32,7 +32,7 @@ export default function ChannelSearch() {
   );
 
   return (
-    <div className="flex flex-col items-center bg-slate-100">
+    <div className="_container flex flex-col gap-4 p-4 items-center bg-slate-100">
       <Head>
         {/* <link
           rel="icon"
