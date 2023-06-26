@@ -41,7 +41,7 @@ function SearchForm(props) {
   };
 
   return (
-    <form className="flex flex-col gap-2 py-8" onSubmit={handleSubmit}>
+    <form className=" flex border-2 border-slate-300 rounded-lg  px-8 flex-col gap-2 py-8" onSubmit={handleSubmit}>
       <input
         required
         onChange={handleChange}
