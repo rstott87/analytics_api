@@ -43,22 +43,23 @@ function SearchForm(props) {
   };
 
   return (
-    <form className="py-8">
-      <div className="flex flex-col gap-2">
-        <input
-          onChange={handleChange}
-          value={searchTerm}
-          placeholder="YouTube Channel ID"
-          className="text-xl rounded-full border border-slate-900 py-3 px-8 font-bold shadow-lg shadow-violet-200"
-          type="text"
-        />
-        <input
-          type="submit"
-          onClick={handleSubmit}
-          className="font-semiboldf rounded-lg border text-2xl border-blue-900 bg-slate-900 p-1 text-neutral-200 shadow-lg shadow-violet-200"
-          value="Search"
-        />
-      </div>
+    <form className="flex flex-col gap-2 py-8" onSubmit={handleSubmit}>
+      <input
+        required
+        onChange={handleChange}
+        value={searchTerm}
+        minLength="20"
+        placeholder="YouTube Channel ID"
+        className="rounded-full border border-slate-900 px-8 py-3 text-xl font-bold shadow-lg shadow-violet-200"
+        type="text"
+      />
+      <button
+        type="submit"
+        className="rounded-lg border border-blue-900 bg-slate-900 p-1 text-2xl font-semibold text-neutral-200 shadow-lg shadow-violet-200"
+        value="Search"
+      >
+        Search
+      </button>
     </form>
   );
 }
