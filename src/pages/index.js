@@ -16,6 +16,7 @@ export default function Home() {
         <title>
           StatCrown | Simplify YouTube Stats and Analytics for Powerful Insights
         </title>
+        <link rel="apple-icon" href="public/apple-icon.png" />
         <meta
           name="description"
           content="Unlock YouTube stats and analytics with intuitive charts and visualizations. Get valuable insights for informed decision-making. Discover a new way to track video performance. Boost your YouTube strategy!"
