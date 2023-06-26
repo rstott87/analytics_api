@@ -47,9 +47,10 @@ function SearchForm(props) {
         onChange={handleChange}
         value={searchTerm}
         minLength="20"
+        maxLength="24"
         placeholder="YouTube Channel ID"
         className="rounded-full border border-slate-900 px-8 py-3 text-xl font-bold shadow-lg shadow-violet-200"
-        type="text"
+        type="search"
       />
       <button
         type="submit"
