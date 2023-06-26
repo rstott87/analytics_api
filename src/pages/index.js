@@ -24,10 +24,10 @@ export default function Home() {
         ></meta>
       </Head>
       <section className="max-w-md pb-6 text-6xl ">
-        <div className="px-4 text-5xl font-bold  text-neutral-300 ">
+        <div className="px-4 text-6xl font-bold  text-neutral-300 ">
           <h2>Fast.</h2>
-          <h2>Clear.</h2>
-          <h2>Real-Time.</h2>
+          <h2>Intuitive.</h2>
+          <h2>In Real-Time.</h2>
         </div>
         <h3 className="px-2 py-10 text-center text-lg font-normal leading-snug text-neutral-500">
           An intuitive and user-friendly platform that leverages the power of AI
@@ -41,18 +41,22 @@ export default function Home() {
           </p>
         </Link>
       </section>
-      <Example
-        image={analyticsImage}
-        title={
-          "Streamline Your YouTube Analytics Experience: Compare Crucial Metrics Across Multiple Channels in Seconds with our Powerful YouTube API Integration"
-        }
-      />
-      <Example
-        image={analyticsImage_2}
-        title={
-          "Uncover Your Competition's Secrets: Gain a Competitive Edge by Analyzing and Benchmarking Key Metrics of Other YouTube Channels with Easen"
-        }
-      />
+      <div className="flex flex-col gap-10 py-8">
+        <Example
+          image={analyticsImage}
+          title={"YouTube Analytics"}
+          subtitle={
+            "Streamline Your YouTube Analytics Experience: Compare Crucial Metrics Across Multiple Channels in Seconds with our Powerful YouTube API Integration"
+          }
+        />
+        <Example
+          image={analyticsImage_2}
+          title={"Insights & Benchmarks"}
+          subtitle={
+            "Uncover Your Competition's Secrets: Gain a Competitive Edge by Analyzing and Benchmarking Key Metrics of Other YouTube Channels with Easen"
+          }
+        />
+      </div>
     </div>
   );
 }
