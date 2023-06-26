@@ -12,8 +12,6 @@ function SearchForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(searchTerm);
-    console.log(channelID.mssp);
-    console.log(enteredSearchTerm);
     //UC4fZeoNxAXfbIpT3swsVh9w
     axios
       .get("https://www.googleapis.com/youtube/v3/channels", {
@@ -49,9 +47,10 @@ function SearchForm(props) {
         onChange={handleChange}
         value={searchTerm}
         minLength="20"
+        maxLength="24"
         placeholder="YouTube Channel ID"
         className="rounded-full border border-slate-900 px-8 py-3 text-xl font-bold shadow-lg shadow-violet-200"
-        type="text"
+        type="search"
       />
       <button
         type="submit"
