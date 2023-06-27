@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html className="bg-black" lang="en">
       <Head />
-      <body>
+      <body className='min-w-min'>
         <Main />
         <NextScript strategy="beforeInteractive" />
       </body>
