@@ -9,7 +9,7 @@ function NavBar(props) {
       <section className="flex items-center gap-2">
         <Image src={crown} alt="StatCrown Main Logo" width={30} height={30} />
         <Link href="/">
-          <h1>StatCrown</h1>
+          <h1 className="font-medium">StatCrown</h1>
         </Link>
       </section>
       <HambugerMenu />
