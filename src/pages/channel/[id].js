@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import ChannelCard from "@/components/ChannelCard";
 
 export const getServerSideProps = async (context) => {
   let key = process.env.YOUTUBE_API_KEY;
@@ -24,9 +25,9 @@ export const getServerSideProps = async (context) => {
 };
 
 export default function Channel({ data }) {
-  const title = data.items[0].snippet.title;
-  const description = data.items[0].snippet.description;
-  const image = data.items[0].snippet.thumbnails.default.url;
+  const channelSnippet = data.items[0].snippet;
+  const channelStatistics = data.items[0].statistics;
+
   return (
     <div className="_container items-center gap-4 bg-slate-100 p-4">
       <Head>
@@ -37,9 +38,15 @@ export default function Channel({ data }) {
           key="desc"
         ></meta>
       </Head>
-      <Image src={image} width={50} height={50} alt="image of podcast"/>
-      <div> {title}</div>
-      <div> {description}</div>
+      <div>{channelSnippet.country}</div>
+      <ChannelCard
+        title={channelSnippet.title}
+        channelPhoto={channelSnippet.thumbnails.default.url}
+        videoCount={channelStatistics.videoCount}
+        viewCount={channelStatistics.viewCount}
+        subscriberCount={channelStatistics.subscriberCount}
+        description={channelSnippet.description}
+      />
     </div>
   );
 }
