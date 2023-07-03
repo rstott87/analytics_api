@@ -1,4 +1,4 @@
-const videosSchema = {
+const playListSchema = {
     "kind": "youtube#playlistItemListResponse",
     "etag": "qpsIHFytY2C7I9Vs1K0W_sa3KXc",
     "nextPageToken": "EAAaBlBUOkNBVQ",
@@ -245,4 +245,4 @@ const videosSchema = {
     }
 }
 
-export default videosSchema;
+export default playListSchema;
