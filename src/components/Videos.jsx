@@ -63,6 +63,7 @@ function Videos() {
   const listOfVideos = videoData.map((item) => (
     <Video
       key={item.id}
+      date={item.snippet.publishedAt}
       likes={item.statistics.likeCount}
       views={item.statistics.viewCount}
       comments={item.statistics.commentCount}
@@ -73,7 +74,7 @@ function Videos() {
 
   return (
     <section>
-      <div>Lates Uploads</div>
+      <div className="text-center">Latest Uploads</div>
       <ul>{listOfVideos}</ul>
     </section>
   );

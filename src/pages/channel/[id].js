@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import ChannelCard from "@/components/ChannelCard";
+import VideoCard from "@/components/VideoCard";
 import Videos from "@/components/Videos";
 
 export const getServerSideProps = async (context) => {
@@ -39,15 +39,15 @@ export default function Channel({ data }) {
           key="desc"
         ></meta>
       </Head>
-        <ChannelCard
-          title={channelSnippet.title}
-          channelPhoto={channelSnippet.thumbnails.default.url}
-          videoCount={channelStatistics.videoCount}
-          viewCount={channelStatistics.viewCount}
-          subscriberCount={channelStatistics.subscriberCount}
-          description={channelSnippet.description}
-        />
-        <Videos/>
+          <VideoCard
+            title={channelSnippet.title}
+            channelPhoto={channelSnippet.thumbnails.default.url}
+            videoCount={channelStatistics.videoCount}
+            viewCount={channelStatistics.viewCount}
+            subscriberCount={channelStatistics.subscriberCount}
+            description={channelSnippet.description}
+          />
+          <Videos/>
     </div>
   );
 }
