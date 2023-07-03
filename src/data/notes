@@ -1,0 +1,9 @@
+
+
+PLAYLIST ID 
+        RESOURCE: Channels
+        PROPERTY: contentDetails.relatedPlaylists.uploads
+
+VIDEOS ID
+        RESOURCE: PlaylistItems
+        PROPERTY: snippet.resourceId.videoId

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import ChannelCard from "@/components/ChannelCard";
+import Videos from "@/components/Vidoes";
 
 export const getServerSideProps = async (context) => {
   let key = process.env.YOUTUBE_API_KEY;
@@ -47,6 +48,7 @@ export default function Channel({ data }) {
         subscriberCount={channelStatistics.subscriberCount}
         description={channelSnippet.description}
       />
+      <Videos />
     </div>
   );
 }
