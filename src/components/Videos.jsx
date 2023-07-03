@@ -34,11 +34,9 @@ function Videos() {
     (item) => item.snippet.resourceId.videoId
   );
 
-  console.log(videoData)
   useEffect(() => {
     setVideoIdList(arrayOfVideoIds);
   }, []);
-
 
   useEffect(() => {
     axios
@@ -66,10 +64,10 @@ function Videos() {
     <Video
       key={item.id}
       likes={item.statistics.likeCount}
-        views={item.statistics.viewCount}
-        comments={item.statistics.commentCount}
+      views={item.statistics.viewCount}
+      comments={item.statistics.commentCount}
       title={item.snippet.title}
-      thumbnail={item.snippet.thumbnails.medium}
+      thumbnail={item.snippet.thumbnails.medium.url}
     />
   ));
 

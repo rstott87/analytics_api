@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import ChannelCard from "@/components/ChannelCard";
-import Videos from "@/components/Vidoes";
+import Videos from "@/components/Videos";
 
 export const getServerSideProps = async (context) => {
   let key = process.env.YOUTUBE_API_KEY;
@@ -30,7 +30,7 @@ export default function Channel({ data }) {
   const channelStatistics = data.items[0].statistics;
 
   return (
-    <div className="_container items-center gap-4 bg-slate-100 p-4">
+    <div className="_container flex flex-col items-center gap-4 bg-slate-100 p-4">
       <Head>
         <title>Channel Page</title>
         <meta
@@ -39,16 +39,18 @@ export default function Channel({ data }) {
           key="desc"
         ></meta>
       </Head>
-      <div>{channelSnippet.country}</div>
-      <ChannelCard
-        title={channelSnippet.title}
-        channelPhoto={channelSnippet.thumbnails.default.url}
-        videoCount={channelStatistics.videoCount}
-        viewCount={channelStatistics.viewCount}
-        subscriberCount={channelStatistics.subscriberCount}
-        description={channelSnippet.description}
-      />
-      <Videos />
+      <div className="">
+        <div>{channelSnippet.country}</div>
+        <ChannelCard
+          title={channelSnippet.title}
+          channelPhoto={channelSnippet.thumbnails.default.url}
+          videoCount={channelStatistics.videoCount}
+          viewCount={channelStatistics.viewCount}
+          subscriberCount={channelStatistics.subscriberCount}
+          description={channelSnippet.description}
+        />
+        <Videos/>
+      </div>
     </div>
   );
 }
