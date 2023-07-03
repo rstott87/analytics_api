@@ -71,7 +71,12 @@ function Videos() {
     />
   ));
 
-  return <div>{listOfVideos}</div>;
+  return (
+    <section>
+      <div>Lates Uploads</div>
+      <ul>{listOfVideos}</ul>
+    </section>
+  );
 }
 
 export default Videos;

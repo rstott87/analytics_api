@@ -39,8 +39,6 @@ export default function Channel({ data }) {
           key="desc"
         ></meta>
       </Head>
-      <div className="">
-        <div>{channelSnippet.country}</div>
         <ChannelCard
           title={channelSnippet.title}
           channelPhoto={channelSnippet.thumbnails.default.url}
@@ -50,7 +48,6 @@ export default function Channel({ data }) {
           description={channelSnippet.description}
         />
         <Videos/>
-      </div>
     </div>
   );
 }
