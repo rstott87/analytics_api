@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import VideoCard from "@/components/VideoCard";
+import FullDataChannelCard from "@/components/FullDataChannelCard";
 import Videos from "@/components/Videos";
 
 export const getServerSideProps = async (context) => {
@@ -30,24 +30,25 @@ export default function Channel({ data }) {
   const channelStatistics = data.items[0].statistics;
 
   return (
-    <div className="_container flex flex-col items-center gap-4 bg-slate-100 p-4">
-      <Head>
-        <title>Channel Page</title>
-        <meta
-          name="description"
-          content="Discover powerful YouTube channel stats search tool. Track and analyze video metrics, engagement, and subscribers. Boost your content strategy!"
-          key="desc"
-        ></meta>
-      </Head>
-          <VideoCard
-            title={channelSnippet.title}
-            channelPhoto={channelSnippet.thumbnails.default.url}
-            videoCount={channelStatistics.videoCount}
-            viewCount={channelStatistics.viewCount}
-            subscriberCount={channelStatistics.subscriberCount}
-            description={channelSnippet.description}
-          />
-          <Videos/>
+    <div className="w-full bg-slate-100 flex flex-col items-center">
+      <div className="_container w-full max-w-md gap-4 p-4">
+        <Head>
+          <title>Channel Page</title>
+          <meta
+            name="description"
+            content="Discover powerful YouTube channel stats search tool. Track and analyze video metrics, engagement, and subscribers. Boost your content strategy!"
+            key="desc"
+          ></meta>
+        </Head>
+        <FullDataChannelCard
+          title={channelSnippet.title}
+          channelPhoto={channelSnippet.thumbnails.default.url}
+          videoCount={channelStatistics.videoCount}
+          viewCount={channelStatistics.viewCount}
+          subscriberCount={channelStatistics.subscriberCount}
+          description={channelSnippet.description}
+        />
+      </div>
     </div>
   );
 }

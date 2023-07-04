@@ -75,7 +75,7 @@ function Videos() {
   return (
     <section>
       <div className="text-center">Latest Uploads</div>
-      <ul>{listOfVideos}</ul>
+      <ul className="grid gap-4">{listOfVideos}</ul>
     </section>
   );
 }
