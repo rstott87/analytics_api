@@ -4,33 +4,33 @@ import Video from "./Video";
 import playListSchema from "@/data/playListSchema";
 
 function Videos(props) {
-  const [playListData, setPlayListData] = useState(playListSchema.items);
+  const [playListData, setPlayListData] = useState([]);
   const [videoIdArray, setVideoIdArray] = useState([]);
   const [videoData, setVideoData] = useState([]);
   const [videoList, setVideoList] = useState([]);
 
   useEffect(() => {
-      axios
-        .get("https://www.googleapis.com/youtube/v3/playlistItems", {
-          params: {
-            playlistId: props.playListId,
-            part: "snippet",
-            key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
-          }
-        })
-        .then(function (response) {
-          // handle success
-          console.log("Fetch to Playlist.")
-          setPlayListData(response.data.items);
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-        })
-        .finally(function () {
-          // always executed
-        });
-    }, []);
+    axios
+      .get("https://www.googleapis.com/youtube/v3/playlistItems", {
+        params: {
+          playlistId: props.playListId,
+          part: "snippet",
+          key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
+        }
+      })
+      .then(function (response) {
+        // handle success
+        console.log("1. Fetch to Playlist.");
+        setPlayListData(response.data.items);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
+  }, [props.playListId]);
     
 
   useEffect(() => {
@@ -42,7 +42,6 @@ function Videos(props) {
 
 
   useEffect(() => {
-    console.log("2"),
       axios
         .get("https://www.googleapis.com/youtube/v3/videos", {
           params: {
@@ -78,6 +77,7 @@ function Videos(props) {
         thumbnail={item.snippet.thumbnails.medium.url}
       />
     ));
+    
     setVideoList(listOfVideos);
   }, [videoData]);
 
