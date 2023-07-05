@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "git": "git add . && git commit -m 'updated via script' && git push origin main",
+    "git": "git add . && git commit -mhttp://localhost:3001/youtube-channel-search 'updated via script' && git push origin main",
     "commit": "git add . && git commit -m 'updated via script' "
   },
   "dependencies": {

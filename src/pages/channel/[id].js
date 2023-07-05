@@ -1,14 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useRouter } from "next/router";
 import FullDataChannelCard from "@/components/FullDataChannelCard";
-import Videos from "@/components/Videos";
+
 
 export const getServerSideProps = async (context) => {
   let key = process.env.YOUTUBE_API_KEY;
   let id = context.query.id;
   const res = await fetch(
-    `https://www.googleapis.com/youtube/v3/channels?id=${id}&key=${key}&part=snippet&part=statistics`
+    `https://www.googleapis.com/youtube/v3/channels?id=${id}&key=${key}&part=snippet&part=statistics&part=contentDetails`
   );
   const data = await res.json();
 
@@ -28,6 +26,7 @@ export const getServerSideProps = async (context) => {
 export default function Channel({ data }) {
   const channelSnippet = data.items[0].snippet;
   const channelStatistics = data.items[0].statistics;
+  const playListId = data.items[0].contentDetails.relatedPlaylists.uploads;
 
   return (
     <div className="w-full bg-slate-100 flex flex-col items-center">
@@ -40,7 +39,8 @@ export default function Channel({ data }) {
             key="desc"
           ></meta>
         </Head>
-        <FullDataChannelCard
+        <FullDataChannelCard  
+          playListId={playListId}
           title={channelSnippet.title}
           channelPhoto={channelSnippet.thumbnails.default.url}
           videoCount={channelStatistics.videoCount}
