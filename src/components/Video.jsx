@@ -2,6 +2,10 @@ import Image from "next/image";
 import VideoStatLeaf from "./VideoStatLeaf";
 
 function Video(props) {
+  const likes = Number(props.likes).toLocaleString();
+  const comments = Number(props.comments).toLocaleString();
+  const views = Number(props.views).toLocaleString();
+  const date = new Date(props.date).toLocaleDateString();
   return (
     <li className=" flex flex-col items-center gap-2 border bg-slate-200 shadow-md shadow-violet-800 rounded-xl p-3">
       {/* <Image
@@ -14,10 +18,10 @@ function Video(props) {
     
       <h3 className="text-center text-violet-800 text-sm font-bold ">{props.title}</h3>
       <div className="grid grid-cols-2 w-full gap-2">
-        <VideoStatLeaf title="Date" count={props.date} />
-        <VideoStatLeaf title="Likes" count={props.likes} />
-        <VideoStatLeaf title="Comments" count={props.comments} />
-        <VideoStatLeaf title="Views" count={props.views} />
+        <VideoStatLeaf title="Date" count={date} />
+        <VideoStatLeaf title="Likes" count={likes} />
+        <VideoStatLeaf title="Comments" count={comments} />
+        <VideoStatLeaf title="Views" count={views} />
       </div>
 
       {/* <div>
