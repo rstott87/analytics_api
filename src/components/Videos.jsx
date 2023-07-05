@@ -63,8 +63,6 @@ function Videos(props) {
         });
   }, [videoIdArray]);
 
-  console.log("outside");
-
   useEffect(() => {
     const listOfVideos = videoData.map((item) => (
       <Video
