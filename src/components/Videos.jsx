@@ -60,9 +60,10 @@ function Videos() {
       });
   }, [videoIdList]);
 
+
   const listOfVideos = videoData.map((item) => (
     <Video
-      key={item.id}
+      key={item.id.toString()}
       date={item.snippet.publishedAt}
       likes={item.statistics.likeCount}
       views={item.statistics.viewCount}
@@ -71,6 +72,8 @@ function Videos() {
       thumbnail={item.snippet.thumbnails.medium.url}
     />
   ));
+
+
 
   return (
     <section>

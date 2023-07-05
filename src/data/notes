@@ -1,21 +1,21 @@
 
 How to get...
 
-PLAYLIST ID 
+PLAYLIST ID    - SearchForm.jsx
         QUERY PARAMS: ID (channel id)
         GET: https://www.googleapis.com/youtube/v3/channels
         RESOURCE: Channels
         PART: contentDetails
         PROPERTY: contentDetails.relatedPlaylists.uploads
 
-VIDEOS ID
+VIDEOS ID     - VideoList.jsx
         QUERY PARAMS: ID (playlist id)
         GET: https://www.googleapis.com/youtube/v3/playlistItems
         RESOURCE: PlaylistItems
         PART: snippet
         PROPERTY: snippet.resourceId.videoId
 
-VIDEO INFO
+VIDEO INFO   - VideoItem.jsx
         QUERY PARAMS: ID (video id)
         GET: https://www.googleapis.com/youtube/v3/videos
         RESOURCE: Videos
