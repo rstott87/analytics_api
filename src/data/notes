@@ -1,0 +1,34 @@
+
+How to get...
+
+PLAYLIST ID    - SearchForm.jsx
+        QUERY PARAMS: ID (channel id)
+        GET: https://www.googleapis.com/youtube/v3/channels
+        RESOURCE: Channels
+        PART: contentDetails
+        PROPERTY: contentDetails.relatedPlaylists.uploads
+
+VIDEOS ID     - Videos.jsx
+        QUERY PARAMS: ID (playlistId)
+        GET: https://www.googleapis.com/youtube/v3/playlistItems
+        RESOURCE: PlaylistItems
+        PART: snippet
+        PROPERTY: snippet.resourceId.videoId
+
+VIDEO INFO   - VideoItem.jsx
+        QUERY PARAMS: ID (videoId or comma separated list of videoIdsay)
+        GET: https://www.googleapis.com/youtube/v3/videos
+        RESOURCE: Videos
+        PART: snippet
+        PROPERTY: snippet.title, snippet.description, snippet.thumbnails.default.url
+
+
+- Set array of video ids to state
+    - use that array to make a request to get video info
+
+
+
+
+
+
+

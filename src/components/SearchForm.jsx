@@ -1,9 +1,11 @@
 import { useState, useEffect, use } from "react";
+import { useRouter } from "next/router";
 import axios from "axios";
 import channelID from "@/data/channelIDs";
 import channelSchema from "../data/channelSchema";
 
 function SearchForm(props) {
+  const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
   const [enteredSearchTerm, setEnteredSearchTerm] = useState("");
   const handleChange = (e) => {
@@ -38,10 +40,14 @@ function SearchForm(props) {
       return searchTerm;
     });
     setSearchTerm("");
+    router.push(({
+      pathname: '/channel/[id]',
+      query: { id: searchTerm },
+    }));
   };
 
   return (
-    <form className=" flex border-2 border-slate-300 rounded-lg  px-8 flex-col gap-2 py-8" onSubmit={handleSubmit}>
+    <form className=" flex border-2 border-slate-300 rounded-lg  px-8 flex-col gap-2 py-2" onSubmit={handleSubmit}>
       <input
         required
         onChange={handleChange}

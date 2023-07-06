@@ -36,9 +36,9 @@ export default function Home() {
         </h3>
 
         <Link href="/youtube-channel-search">
-          <p className="rounded-full bg-neutral-200 px-4 py-2 text-xl font-normal text-slate-900 shadow-md shadow-purple-500">
+          <div className="rounded-full bg-neutral-200 px-4 py-2 text-xl font-normal text-slate-900 shadow-md shadow-purple-500">
             {`Get Started`}
-          </p>
+          </div>
         </Link>
       </section>
       <div className="flex flex-col gap-10 py-8">

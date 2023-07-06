@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "git": "git add . && git commit -m 'updated via script' && git push origin main"
+    "git": "git add . && git commit -mhttp://localhost:3001/youtube-channel-search 'updated via script' && git push origin main",
+    "commit": "git add . && git commit -m 'updated via script' "
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.1",
