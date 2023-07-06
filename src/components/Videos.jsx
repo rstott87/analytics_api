@@ -75,7 +75,6 @@ function Videos(props) {
         thumbnail={item.snippet.thumbnails.medium.url}
       />
     ));
-    
     setVideoList(listOfVideos);
   }, [videoData]);
 
