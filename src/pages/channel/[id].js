@@ -3,6 +3,7 @@ import FullDataChannelCard from "@/components/FullDataChannelCard";
 import { data } from "autoprefixer";
 
 export const getServerSideProps = async (context) => {
+  try {
   let key = process.env.YOUTUBE_API_KEY;
   let id = context.query.id;
   const resChannels = await fetch(
@@ -10,6 +11,7 @@ export const getServerSideProps = async (context) => {
   );
 
   const dataChannels = await resChannels.json();
+  
   let playlistId = await dataChannels.items[0].contentDetails.relatedPlaylists
     .uploads;
 
@@ -38,6 +40,14 @@ export const getServerSideProps = async (context) => {
   return {
     props: { dataPlayList, dataChannels, dataVideos }
   };
+} catch (error) {
+  return {
+      redirect: {
+        destination: "/youtube-channel-search",
+        permanent: false
+      }
+    }; 
+  }
 };
 
 export default function Channel({ dataChannels, dataPlayList, dataVideos }) {
