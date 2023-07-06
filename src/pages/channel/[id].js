@@ -13,13 +13,10 @@ export const getServerSideProps = async (context) => {
   let playlistId = await dataChannels.items[0].contentDetails.relatedPlaylists
     .uploads;
 
-
-
   const resPlaylistItems = await fetch(
     `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${playlistId}&key=${key}&part=snippet`
   );
   const dataPlayList = await resPlaylistItems.json();
-
 
   let videoIdArray = await dataPlayList.items.map(
     (item) => item.snippet.resourceId.videoId
