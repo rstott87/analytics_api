@@ -18,13 +18,9 @@ export default function ChannelSearch() {
     searchResponse.map((item) => (
       <ChannelCard
         key={item.id}
-        className="text-2xl"
         title={item.snippet.title}
         channelPhoto={item.snippet.thumbnails.default.url}
-        videoCount={item.statistics.videoCount}
-        viewCount={item.statistics.viewCount}
-        subscriberCount={item.statistics.subscriberCount}
-        description={item.snippet.description}
+        channelId={item.id}
       />
     ))
   ) : (
