@@ -33,7 +33,7 @@ function FullDataChannelCard(props) {
           percent={"15"}
         />
       </div>
-      <Videos playListId={props.playListId}/>
+      <Videos playListId={props.playListId} dataPlaylist={props.dataPlaylist} dataVideos={props.dataVideos}/>
     </div>
   );
 }
