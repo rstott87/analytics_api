@@ -1,6 +1,5 @@
 import axios from "axios";
 import Head from "next/head";
-import { ErrorBoundary } from "react-error-boundary";
 import { useState, useEffect } from "react";
 import channelSchema from "../data/channelSchema";
 import SearchForm from "../components/SearchForm";
@@ -12,10 +11,12 @@ const baseURL =
   "https://www.googleapis.com/youtube/v3/channels?id=UC4fZeoNxAXfbIpT3swsVh9w&part=statistics";
 
 export default function ChannelSearch() {
-  const [searchResponse, setSearchResponse] = useState(channelSchema.items);
+  // const [searchResponse, setSearchResponse] = useState(channelSchema.items);
 
-  const listOfPodcastCards = searchResponse ? (
-    searchResponse.map((item) => (
+  const defaultList = channelSchema.items;
+
+  const listOfPodcastCards = defaultList ? (
+    defaultList.map((item) => (
       <ChannelCard
         key={item.id}
         title={item.snippet.title}
@@ -45,7 +46,7 @@ export default function ChannelSearch() {
           key="desc"
         ></meta>
       </Head>
-      <SearchForm setSearchResponse={setSearchResponse} />
+      <SearchForm />
       <CardDisplay listOfPodcastCards={listOfPodcastCards} />
     </div>
   );

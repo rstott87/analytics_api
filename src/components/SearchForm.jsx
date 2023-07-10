@@ -26,7 +26,7 @@ function SearchForm(props) {
       .then(function (response) {
         // handle success
         console.log(response.data);
-        props.setSearchResponse(response.data.items);
+
       })
       .catch(function (error) {
         // handle error
