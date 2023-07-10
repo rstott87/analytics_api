@@ -4,7 +4,7 @@ import VideoStatLeaf from "./VideoStatLeaf";
 function Video(props) {
   const likes = Number(props.likes).toLocaleString();
   const comments = Number(props.comments).toLocaleString();
-  const views = Number(props.dataVideos.items[0].statistics.viewCount).toLocaleString();
+  const views = Number(props.views).toLocaleString();
   const date = new Date(props.date).toLocaleDateString();
   const title = props.title;
   return (
