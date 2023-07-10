@@ -4,45 +4,45 @@ import { data } from "autoprefixer";
 
 export const getServerSideProps = async (context) => {
   try {
-  let key = process.env.YOUTUBE_API_KEY;
-  let id = context.query.id;
-  
-  const resChannels = await fetch(
-    `https://www.googleapis.com/youtube/v3/channels?id=${id}&key=${key}&part=snippet&part=statistics&part=contentDetails`
-  );
-  const dataChannels = await resChannels.json();
-  let playlistId = await dataChannels.items[0].contentDetails.relatedPlaylists
-    .uploads;
-  const resPlaylistItems = await fetch(
-    `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${playlistId}&key=${key}&part=snippet`
-  );
-  const dataPlayList = await resPlaylistItems.json();
-  let videoIdArray = await dataPlayList.items.map(
-    (item) => item.snippet.resourceId.videoId
-  );
-  const resVideos = await fetch(
-    `https://www.googleapis.com/youtube/v3/videos?id=${videoIdArray}&key=${key}&part=snippet&part=statistics`
-  );
-  const dataVideos = await resVideos.json();
+    let key = process.env.YOUTUBE_API_KEY;
+    let id = context.query.id;
 
-  if (!dataChannels.items) {
+    const resChannels = await fetch(
+      `https://www.googleapis.com/youtube/v3/channels?id=${id}&key=${key}&part=snippet&part=statistics&part=contentDetails`
+    );
+    const dataChannels = await resChannels.json();
+    let playlistId = await dataChannels.items[0].contentDetails.relatedPlaylists
+      .uploads;
+    const resPlaylistItems = await fetch(
+      `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${playlistId}&key=${key}&part=snippet`
+    );
+    const dataPlayList = await resPlaylistItems.json();
+    let videoIdArray = await dataPlayList.items.map(
+      (item) => item.snippet.resourceId.videoId
+    );
+    const resVideos = await fetch(
+      `https://www.googleapis.com/youtube/v3/videos?id=${videoIdArray}&key=${key}&part=snippet&part=statistics`
+    );
+    const dataVideos = await resVideos.json();
+
+    if (!dataChannels.items) {
+      return {
+        redirect: {
+          destination: "/youtube-channel-search",
+          permanent: false
+        }
+      };
+    }
+    return {
+      props: { dataPlayList, dataChannels, dataVideos }
+    };
+  } catch (error) {
     return {
       redirect: {
         destination: "/youtube-channel-search",
         permanent: false
       }
     };
-  }
-  return {
-    props: { dataPlayList, dataChannels, dataVideos }
-  };
-} catch (error) {
-  return {
-      redirect: {
-        destination: "/youtube-channel-search",
-        permanent: false
-      }
-    }; 
   }
 };
 

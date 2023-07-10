@@ -51,7 +51,7 @@ export default function ChannelSearch({ channelData }) {
         ></meta>
       </Head>
       <SearchForm />
-      
+
       <CardDisplay listOfPodcastCards={listOfPodcastCards} />
     </div>
   );
