@@ -47,7 +47,7 @@ function SearchForm(props) {
 
   return (
     <form
-      className=" flex flex-col rounded-lg gap-4 px-8 py-2 pt-4 pb-4 shadow-violet-900"
+      className=" flex flex-col rounded-lg gap-4 px-8 py-14  shadow-violet-900"
       onSubmit={handleSubmit}
     >
       <input
