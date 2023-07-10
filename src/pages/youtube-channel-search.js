@@ -56,4 +56,3 @@ export default function ChannelSearch({ channelData }) {
     </div>
   );
 }
-git
