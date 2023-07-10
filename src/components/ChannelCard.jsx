@@ -34,17 +34,20 @@ function ChannelCard(props) {
       });
   };
   return (
-    <li className="mb-6 flex flex-col items-center gap-3 rounded-lg border border-slate-300 bg-slate-300 px-4 py-6 text-center text-slate-300 shadow-lg shadow-slate-600">
+    <li className="mb-6 flex flex-col items-center gap-3 rounded-lg bg-gradient-to-br from-slate-800 px-4 py-6 text-center text-slate-300 shadow-md shadow-violet-900">
       <Image
-        className="rounded-full border-4 border-slate-800 shadow-lg shadow-slate-500"
+        className="rounded-full border-4 border-slate-800 "
         src={props.channelPhoto}
         width={90}
         height={90}
         alt="Picture of the author"
       />
-      <p className=" text-3xl font-semibold text-slate-800">{props.title}</p>
+      <p className=" text-3xl font-semibold text-neutral-100">{props.title}</p>
       <form onSubmit={handleSubmit}>
-        <button type="submit" className="w-full rounded-lg border border-blue-900 bg-slate-900 p-1 text-2xl font-semibold text-neutral-200 shadow-lg shadow-violet-200">
+        <button
+          type="submit"
+          className="w-full rounded-lg border border-violet-800 bg-violet-700 p-2 px-4 text-xl font-semibold text-neutral-100 shadow-md shadow-violet-900"
+        >
           {" "}
           See Channel Stats{" "}
         </button>

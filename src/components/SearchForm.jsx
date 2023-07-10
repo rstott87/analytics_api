@@ -26,7 +26,6 @@ function SearchForm(props) {
       .then(function (response) {
         // handle success
         console.log(response.data);
-
       })
       .catch(function (error) {
         // handle error
@@ -40,14 +39,17 @@ function SearchForm(props) {
       return searchTerm;
     });
     setSearchTerm("");
-    router.push(({
-      pathname: '/channel/[id]',
-      query: { id: searchTerm },
-    }));
+    router.push({
+      pathname: "/channel/[id]",
+      query: { id: searchTerm }
+    });
   };
 
   return (
-    <form className=" flex border-2 border-slate-300 rounded-lg  px-8 flex-col gap-2 py-2" onSubmit={handleSubmit}>
+    <form
+      className=" flex flex-col rounded-lg gap-4 px-8 py-2 pt-4 pb-4 shadow-violet-900"
+      onSubmit={handleSubmit}
+    >
       <input
         required
         onChange={handleChange}
@@ -55,12 +57,12 @@ function SearchForm(props) {
         minLength="20"
         maxLength="24"
         placeholder="YouTube Channel ID"
-        className="rounded-full border border-slate-900 px-8 py-3 text-xl font-bold shadow-lg shadow-violet-200"
+        className="rounded-full border border-slate-900 px-8 py-3 text-xl font-bold shadow-md shadow-violet-800"
         type="search"
       />
       <button
         type="submit"
-        className="rounded-lg border border-blue-900 bg-slate-900 p-1 text-2xl font-semibold text-neutral-200 shadow-lg shadow-violet-200"
+        className="rounded-lg border border-blue-500 bg-blue-600 p-1 text-2xl font-semibold text-neutral-100 shadow-md shadow-violet-800"
         value="Search"
       >
         Search

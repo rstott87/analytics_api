@@ -39,7 +39,7 @@ export default function ChannelSearch({ channelData }) {
   );
 
   return (
-    <div className="_container flex flex-col items-center gap-4 bg-slate-100 p-4">
+    <div className="_container flex flex-col items-center gap-6  p-4">
       <Head>
         <title>
           YouTube Channel Stats Search Tool | Analyze and Track Video Metrics
@@ -51,6 +51,7 @@ export default function ChannelSearch({ channelData }) {
         ></meta>
       </Head>
       <SearchForm />
+      
       <CardDisplay listOfPodcastCards={listOfPodcastCards} />
     </div>
   );
