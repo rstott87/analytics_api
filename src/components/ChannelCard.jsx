@@ -2,13 +2,14 @@ import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import StatCard from "./StatCard";
+import Loader from "./Loader";
 
 function ChannelCard(props) {
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(props.channelId);
+    setIsLoading(true);
     axios
       .get("https://www.googleapis.com/youtube/v3/channels", {
         params: {
@@ -19,7 +20,6 @@ function ChannelCard(props) {
       })
       .then(function (response) {
         // handle success
-        console.log(response.data);
       })
       .catch(function (error) {
         // handle error
@@ -33,8 +33,12 @@ function ChannelCard(props) {
         query: { id: props.channelId }
       });
   };
+
+
   return (
     <li className="mb-6 flex flex-col items-center gap-3 rounded-lg bg-gradient-to-br from-slate-800 px-4 py-6 text-center text-slate-300 shadow-md shadow-violet-900">
+      {/* {isLoading && <Loader />} */}
+
       <Image
         className="rounded-full border-4 border-slate-800 "
         src={props.channelPhoto}
@@ -44,13 +48,16 @@ function ChannelCard(props) {
       />
       <p className=" text-3xl font-semibold text-neutral-100">{props.title}</p>
       <form onSubmit={handleSubmit}>
-        <button
-          type="submit"
-          className="w-full rounded-lg border border-violet-800 bg-violet-700 p-2 px-4 text-xl font-semibold text-neutral-100 shadow-md shadow-violet-900"
-        >
-          {" "}
-          See Channel Stats{" "}
-        </button>
+        {isLoading ? (
+          <Loader></Loader>
+        ) : (
+          <button
+            type="submit"
+            className="w-full min-w-min rounded-lg border border-violet-800 bg-violet-700 p-2 px-4 text-xl font-semibold text-neutral-100 shadow-md shadow-violet-900"
+          >
+            See Channel Stats
+          </button>
+        )}
       </form>
     </li>
   );

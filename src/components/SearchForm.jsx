@@ -1,20 +1,20 @@
 import { useState, useEffect, use } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+
 import channelID from "@/data/channelIDs";
 import channelSchema from "../data/channelSchema";
 
 function SearchForm(props) {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
+  const [inputError, setInputError] = useState(false);
   const [enteredSearchTerm, setEnteredSearchTerm] = useState("");
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(searchTerm);
-    //UC4fZeoNxAXfbIpT3swsVh9w
     axios
       .get("https://www.googleapis.com/youtube/v3/channels", {
         params: {
@@ -24,30 +24,27 @@ function SearchForm(props) {
         }
       })
       .then(function (response) {
-        // handle success
-        console.log(response.data);
+        router.push({
+          pathname: "/channel/[id]",
+          query: { id: searchTerm }
+        });
       })
       .catch(function (error) {
-        // handle error
         console.log(error);
       })
       .finally(function () {
-        // always executed
+        setSearchTerm("");
+        setInputError(true);
       });
 
     setEnteredSearchTerm((prevValue) => {
       return searchTerm;
     });
-    setSearchTerm("");
-    router.push({
-      pathname: "/channel/[id]",
-      query: { id: searchTerm }
-    });
   };
 
   return (
     <form
-      className=" flex flex-col rounded-lg gap-4 px-8 py-14  shadow-violet-900"
+      className=" flex flex-col gap-4 rounded-lg px-8 py-14  shadow-violet-900"
       onSubmit={handleSubmit}
     >
       <input
@@ -67,6 +64,12 @@ function SearchForm(props) {
       >
         Search
       </button>
+
+      {inputError && (
+        <p className="text-center text-xl font-semibold text-red-500">
+          Please enter a valid YouTube Channel ID
+        </p>
+      )}
     </form>
   );
 }
