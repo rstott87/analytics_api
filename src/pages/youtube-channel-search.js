@@ -22,7 +22,6 @@ export const getStaticProps = async () => {
 };
 
 export default function ChannelSearch({ channelData }) {
-  console.log(channelData);
   const defaultList = channelData.items;
 
   const listOfPodcastCards = defaultList ? (

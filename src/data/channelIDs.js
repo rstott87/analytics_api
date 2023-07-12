@@ -9,7 +9,8 @@ const channelID = {
   LegionOfSkanks: "UC15XVjBZTbV1oBebwDY9UBg",
   theBonfire: "UCeYSlCaX1PheCaqxN7uQX4A",
   theFighterAndTheKid: "UC6AbsTfBMQ_dHjtipwh3bZg",
-  theoVon: "UC5AQEUAwCh1sGDvkQtkDWUQ"
+  theoVon: "UC5AQEUAwCh1sGDvkQtkDWUQ",
+  fake: "UC5AQEUAwCh1sGDvkQtk1211",
 };
 
 
