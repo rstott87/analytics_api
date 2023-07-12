@@ -45,34 +45,39 @@ function SearchForm(props) {
       });
   };
 
+
   return (
-    <form
-      className=" flex flex-col gap-4 rounded-lg px-8 py-14  shadow-violet-900"
-      onSubmit={handleSubmit}
-    >
-      <input
-        required
-        onChange={handleChange}
-        value={searchTerm}
-        minLength="20"
-        maxLength="24"
-        placeholder="YouTube Channel ID"
-        className="rounded-full border border-slate-900 px-8 py-3 text-xl font-bold shadow-md shadow-violet-800"
-        type="search"
-      />
-      <button
-        type="submit"
-        className="rounded-lg border border-blue-500 bg-blue-600 p-1 text-2xl font-semibold text-neutral-100 shadow-md shadow-violet-800"
-        value="Search"
+    <div>
+      <form
+        className=" flex flex-col gap-4 rounded-lg px-8 py-14  shadow-violet-900"
+        onSubmit={handleSubmit}
       >
-        {isLoading ? <Loader /> : "Search"}
-      </button>
-      {inputError && (
-        <p className="text-center text-xl font-semibold text-red-500">
-          Please enter a valid YouTube Channel ID
-        </p>
-      )}
-    </form>
+        <input
+          required
+          onChange={handleChange}
+          value={searchTerm}
+          minLength="20"
+          maxLength="24"
+          placeholder="YouTube Channel ID"
+          className="rounded-full border border-slate-900 px-8 py-3 text-xl font-bold shadow-md shadow-violet-800"
+          type="search"
+        />
+        <button
+          type="submit"
+          className="rounded-lg border border-blue-500 bg-blue-600 p-1 text-2xl font-semibold text-neutral-100 shadow-md shadow-violet-800"
+          value="Search"
+        >
+          {isLoading ? <Loader /> : "Search"}
+        </button>
+        {inputError && (
+          <div className="flex flex-col items-center">
+            <p className="absolute text-center text-xl font-semibold text-red-500">
+              Invalid Channel ID. Please try again.
+            </p>
+          </div>
+        )}
+      </form>
+    </div>
   );
 }
 
