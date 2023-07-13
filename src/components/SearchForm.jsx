@@ -28,7 +28,7 @@ function SearchForm(props) {
       })
       .then(function (response) {
         console.log(response.data);
-        if (response.data.pageInfo.totalResults === 0){
+        if (response.data.pageInfo.totalResults === 0) {
           throw new Error("No Results Found");
         }
         router.push({
@@ -45,7 +45,6 @@ function SearchForm(props) {
       });
   };
 
-
   return (
     <div>
       <form
@@ -59,7 +58,7 @@ function SearchForm(props) {
           minLength="20"
           maxLength="24"
           placeholder="YouTube Channel ID"
-          className="rounded-full border border-slate-900 px-8 py-3 text-xl font-bold shadow-md shadow-violet-800"
+          className="border-slate-300 font-semibold rounded-full border px-8 py-3 text-xl shadow-md shadow-violet-800 placeholder:italic placeholder:font-semibold focus:border-violet-800 focus:outline-none focus:ring-1 focus:ring-violet-800"
           type="search"
         />
         <button
