@@ -48,7 +48,7 @@ function SearchForm(props) {
   return (
     <div>
       <form
-        className=" flex flex-col gap-4 rounded-lg px-8 py-14  shadow-violet-900"
+        className=" flex flex-col gap-3 rounded-lg px-8 py-14 shadow-violet-900"
         onSubmit={handleSubmit}
       >
         <input
@@ -58,12 +58,12 @@ function SearchForm(props) {
           minLength="20"
           maxLength="24"
           placeholder="YouTube Channel ID"
-          className="border-slate-300 font-semibold rounded-full border px-8 py-3 text-xl shadow-md shadow-violet-800 placeholder:italic placeholder:font-semibold focus:border-violet-800 focus:outline-none focus:ring-1 focus:ring-violet-800"
+          className="rounded-full border border-slate-300 px-8 py-2 placeholder:text-md font-semibold shadow-md shadow-violet-800  placeholder:text-slate-400 placeholder:font-medium focus:border-violet-800 focus:outline-none focus:ring-1 focus:ring-violet-800"
           type="search"
         />
         <button
           type="submit"
-          className="rounded-lg border border-blue-500 bg-blue-600 p-1 text-2xl font-semibold text-neutral-100 shadow-md shadow-violet-800"
+          className="rounded-lg border border-blue-500 bg-blue-600 p-1 text-lg font-semibold text-neutral-100 shadow-md shadow-violet-800"
           value="Search"
         >
           {isLoading ? <Loader /> : "Search"}

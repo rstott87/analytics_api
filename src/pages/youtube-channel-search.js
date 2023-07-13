@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
   
 
   const res = await fetch(
-    `https://www.googleapis.com/youtube/v3/channels?id=${arrayOfChannelIdsString}&part=snippet&key=${key}`
+    `https://www.googleapis.com/youtube/v3/channels?id=${arrayOfChannelIdsString}&part=snippet&key=${key}&part=statistics`
   );
   const channelData = await res.json();
   return { props: { channelData } };
@@ -28,6 +28,8 @@ export default function ChannelSearch({ channelData }) {
     defaultList.map((item) => (
       <ChannelCard
         key={item.id}
+        subscriberCount={item.statistics.subscriberCount}
+        videoCount={item.statistics.videoCount}
         title={item.snippet.title}
         channelPhoto={item.snippet.thumbnails.default.url}
         channelId={item.id}
@@ -38,20 +40,21 @@ export default function ChannelSearch({ channelData }) {
   );
 
   return (
-    <div className="_container flex flex-col items-center gap-6  p-4">
-      <Head>
-        <title>
-          YouTube Channel Stats Search Tool | Analyze and Track Video Metrics
-        </title>
-        <meta
-          name="description"
-          content="Discover powerful YouTube channel stats search tool. Track and analyze video metrics, engagement, and subscribers. Boost your content strategy!"
-          key="desc"
-        ></meta>
-      </Head>
-      <SearchForm />
-
-      <CardDisplay listOfPodcastCards={listOfPodcastCards} />
+    <div className="flex flex-col items-center">
+      <div className="_container gap-6 p-4 px-5">
+        <Head>
+          <title>
+            YouTube Channel Stats Search Tool | Analyze and Track Video Metrics
+          </title>
+          <meta
+            name="description"
+            content="Discover powerful YouTube channel stats search tool. Track and analyze video metrics, engagement, and subscribers. Boost your content strategy!"
+            key="desc"
+          ></meta>
+        </Head>
+        <SearchForm />
+        <CardDisplay listOfPodcastCards={listOfPodcastCards} />
+      </div>
     </div>
   );
 }
