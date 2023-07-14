@@ -7,6 +7,8 @@ import Loader from "./Loader";
 function ChannelCard(props) {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const subscriberCount = Number(props.subscriberCount).toLocaleString();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -28,37 +30,52 @@ function ChannelCard(props) {
       .finally(function () {
         // always executed
       });
-      router.push({
-        pathname: "/channel/[id]",
-        query: { id: props.channelId }
-      });
+    router.push({
+      pathname: "/channel/[id]",
+      query: { id: props.channelId }
+    });
   };
 
-
   return (
-    <li className="mb-6 flex flex-col items-center gap-3 rounded-lg bg-gradient-to-br from-slate-800 px-4 py-6 text-center text-slate-300 shadow-md shadow-violet-900">
+    <li className="rounded-lg border border-slate-900 bg-gradient-to-bl from-slate-800 px-3 pb-4 text-slate-300 shadow-md shadow-violet-900">
       {/* {isLoading && <Loader />} */}
 
-      <Image
-        className="rounded-full border-4 border-slate-800 "
-        src={props.channelPhoto}
-        width={90}
-        height={90}
-        alt="Picture of the author"
-      />
-      <p className=" text-3xl font-semibold text-neutral-100">{props.title}</p>
-      <form onSubmit={handleSubmit}>
-        {isLoading ? (
-          <Loader></Loader>
-        ) : (
-          <button
-            type="submit"
-            className="w-full min-w-min rounded-lg border border-violet-800 bg-violet-700 p-2 px-4 text-xl font-semibold text-neutral-100 shadow-md shadow-violet-900"
-          >
-            See Channel Stats
-          </button>
-        )}
-      </form>
+      <div className=" flex items-center justify-start py-2">
+        <Image
+          className="rounded-full border-2 border-violet-800 "
+          src={props.channelPhoto}
+          width={50}
+          height={50}
+          alt="Picture of the author"
+        />
+        <p className="px-2 text-lg font-semibold text-neutral-100">
+          {props.title}
+        </p>
+      </div>
+      <div>
+        <div className="flex items-center justify-between">
+          <div className="pt-1">
+            <p className="text-center text-sm font-semibold text-neutral-100">
+              Subscribers
+            </p>
+            <p className="text-sm font-semibold text-neutral-300">
+              {subscriberCount}
+            </p>
+          </div>
+          <form onSubmit={handleSubmit}>
+            {isLoading ? (
+              <Loader></Loader>
+            ) : (
+              <button
+                type="submit"
+                className="rounded-lg border border-violet-900 bg-violet-700 p-2 text-sm font-semibold text-neutral-100 shadow-sm shadow-violet-900"
+              >
+                View Stats
+              </button>
+            )}
+          </form>
+        </div>
+      </div>
     </li>
   );
 }
