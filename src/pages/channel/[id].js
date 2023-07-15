@@ -56,7 +56,7 @@ export default function Channel({ dataChannels, dataPlayList, dataVideos }) {
   console.log(dataVideos);
 
   return (
-    <div className="flex w-full flex-col items-center bg-slate-100">
+    <div className="flex w-full flex-col items-center">
       <div className="_container w-full max-w-md gap-4 p-4">
         <Head>
           <title>Channel Page</title>
