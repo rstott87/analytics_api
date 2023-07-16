@@ -3,7 +3,7 @@ import { use, useEffect, useState } from "react";
 import Video from "./Video";
 import playListSchema from "@/data/playListSchema";
 
-function Videos(props) {
+function VideosContainer(props) {
   const [videoList, setVideoList] = useState([]);
 
   // useEffect(() => {
@@ -77,10 +77,10 @@ function Videos(props) {
 
   return (
     <section>
-      <div className="text-center">Latest Uploads</div>
+    <h2 className="text-3xl py-4 pt-10 font-bold">Latest Uploads</h2>
       <ul className="grid gap-4">{videoList}</ul>
     </section>
   );
 }
 
-export default Videos;
+export default VideosContainer;
