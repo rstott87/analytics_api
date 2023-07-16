@@ -77,6 +77,7 @@ function VideosContainer(props) {
 
   return (
     <section>
+    <h2 className="text-3xl py-4 pt-10 font-bold">Latest Uploads</h2>
       <ul className="grid gap-4">{videoList}</ul>
     </section>
   );
