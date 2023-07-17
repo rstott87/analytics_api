@@ -6,6 +6,7 @@ import Example from "../components/Example";
 import Head from "next/head";
 import analyticsImage_2 from "src/images/Analytics_Dashboard_2.png";
 import analyticsImage from "src/images/Analytics_Dashboard.png";
+import channel_example from "src/images/channel_example.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,36 +25,38 @@ export default function Home() {
         ></meta>
       </Head>
       <section className="max-w-md pb-6 text-6xl ">
-        <div className="px-4 text-6xl font-bold  text-neutral-300 ">
-          <h2>Fast.</h2>
-          <h2>Intuitive.</h2>
-          <h2>In Real-Time.</h2>
+        <div className=" text-5xl font-semibold  text-neutral-300 ">
+          <h2>{`Real-Time Data.`}</h2>
+          <h2 className="text-violet-400">Market Insights.</h2>
+          <h2>Strategy Made Simple.</h2>
         </div>
-        <h3 className="px-2 py-10 text-center text-lg font-normal leading-snug text-neutral-500">
-          An intuitive and user-friendly platform that leverages the power of AI
-          to bring you detailed data and insightful analytics for any YouTube
-          channel in seconds.
+        <h3 className="px-2 py-10 text-center text-lg font-medium leading-snug text-neutral-500">
+          StatCrown is a platorm built to give creators the data-driven insights
+          they need to build successful branding and content strategies in
+          seconds.
         </h3>
 
-        <Link href="/youtube-channel-search">
-          <div className="rounded-full bg-neutral-200 px-4 py-2 text-xl font-normal text-slate-900 shadow-md shadow-purple-500">
-            {`Get Started`}
-          </div>
-        </Link>
+        <div className="px-8">
+          <Link href="/youtube-channel-search">
+            <div className="rounded-full bg-neutral-200 px-4 py-2 text-xl font-bold text-slate-900 shadow-lg shadow-purple-900">
+              {`Get Started`}
+            </div>
+          </Link>
+        </div>
       </section>
-      <div className="flex flex-col gap-10 py-8">
+      <div className="flex flex-col gap-10 px-5 pt-10">
         <Example
           image={analyticsImage}
           title={"YouTube Analytics"}
           subtitle={
-            "Streamline Your YouTube Analytics Experience: Compare Crucial Metrics Across Multiple Channels in Seconds with our Powerful YouTube API Integration"
+            "Compare Crucial Metrics Across Multiple Channels in Seconds with our Powerful YouTube API Integration"
           }
         />
         <Example
           image={analyticsImage_2}
           title={"Insights & Benchmarks"}
           subtitle={
-            "Uncover Your Competition's Secrets: Gain a Competitive Edge by Analyzing and Benchmarking Key Metrics of Other YouTube Channels with Easen"
+            "Gain a Competitive Edge by Analyzing and Benchmarking Key Metrics of Competitors with Ease"
           }
         />
       </div>
