@@ -8,7 +8,7 @@ function Video(props) {
   const date = new Date(props.date).toLocaleDateString();
   const title = props.title;
   return (
-    <li className=" flex flex-col  border-b px-2 border-b-violet-700 pb-3">
+    <li className=" flex flex-col border-b px-2 border-b-violet-700 pb-2">
       {/* <Image
         className="rounded-lg"
         src={props.thumbnail}
@@ -17,8 +17,8 @@ function Video(props) {
         alt="thumbnail from youtube video"
       /> */}
 
-      <h3 className="text-md pt-2 text-left text-lg font-bold ">{title}</h3>
-      <div className="grid w-full grid-cols-4 py-4 gap-2">
+      <h3 className=" text-left text-sm font-light ">{title}</h3>
+      <div className="grid w-full grid-cols-4 py-1 gap-2">
         <VideoStatLeaf title="Date" count={date} />
         <VideoStatLeaf title="Views" count={views} />
         <VideoStatLeaf title="Likes" count={likes} />
