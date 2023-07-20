@@ -8,7 +8,7 @@ function Video(props) {
   const date = new Date(props.date).toLocaleDateString();
   const title = props.title;
   return (
-    <li className=" flex flex-col border-b border-b-violet-700 px-2 pb-2">
+    <li className=" flex flex-col border-b border-b-violet-700 px-2 pb-1">
       {/* <Image
         className="rounded-lg"
         src={props.thumbnail}

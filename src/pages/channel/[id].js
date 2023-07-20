@@ -51,8 +51,6 @@ export default function Channel({ dataChannels, dataPlayList, dataVideos }) {
   const channelStatistics = dataChannels.items[0].statistics;
   const playListId =
     dataChannels.items[0].contentDetails.relatedPlaylists.uploads;
-  console.log(dataChannels);
-  console.log(dataPlayList);
   console.log(dataVideos);
 
   return (
