@@ -16,7 +16,7 @@ function FullDataChannelCard(props) {
         alt="Picture of the author"
       />
 
-      <p className=" text-3xl font-bold ">{props.title}</p>
+      <p className=" text-3xl font-bold text-clip">{props.title}</p>
       <div className="grid grid-cols-3 gap-5 py-4">
         <StatCard
           title={"Subscribers"}
