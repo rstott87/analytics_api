@@ -15,12 +15,10 @@ export default async function handler(req, res) {
     });
     return;
   }
-
   const videoData = req.body.videoData || "";
-
   try {
     const completion = await openai.createCompletion({
-      model: "gpt-3.5-turbo",
+      model: "davinci",
       prompt: generatePrompt(videoData),
       temperature: 0.6
     });
@@ -42,7 +40,7 @@ export default async function handler(req, res) {
 }
 
 function generatePrompt(videoData) {
-  return `I'm going to give you a an array of data from the latest videos on a single YouTube channel. I want you to analyze the data and write a summary of the channel.
+  return `I'm going to give you a an array of data from the latest videos on a single YouTube channel. The data will include number of video likes on the video, date of the video, and number of comments. I want you to analyze and report on any trends that you see.
 
 Channel Data: ${videoData}
 Your Summary:`;

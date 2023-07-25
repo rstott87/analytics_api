@@ -6,16 +6,14 @@ export default function AnalysisSummary(props) {
 
   async function HandleGetAnalysisClick() {
     const videoData = props.dataVideos.items.map((item) => ({
-      viewCount: item.statistics.viewCount,
       likeCount: item.statistics.likeCount,
-      dislikeCount: item.statistics.dislikeCount,
-      commentCount: item.statistics.commentCount,
-      favoriteCount: item.statistics.favoriteCount,
-      publishedAt: item.snippet.publishedAt
+      publishedAt: item.snippet.publishedAt,
     }));
     console.log(videoData);
     setAnalysis(true);
+  
 
+    console.log(videoData)
 
     try {
       const response = await fetch("/api/generate", {
