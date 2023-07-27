@@ -7,42 +7,44 @@ export default function AnalysisSummary(props) {
   async function HandleGetAnalysisClick() {
     const videoData = props.dataVideos.items.map((item) => ({
       likeCount: item.statistics.likeCount,
+      commentCount: item.statistics.commentCount,
       publishedAt: item.snippet.publishedAt,
+      title: item.snippet.title,
     }));
-    console.log(videoData);
+  
     setAnalysis(true);
   
 
-    console.log(videoData)
+    console.log(JSON.stringify(videoData))
 
-    try {
-      const response = await fetch("/api/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ videoData })
-      });
+  //   try {
+  //     const response = await fetch("/api/generate", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify({ videoData })
+  //     });
 
-      const data = await response.json();
-      if (response.status !== 200) {
-        throw (
-          data.error ||
-          new Error(`Request failed with status ${response.status}`)
-        );
-      }
+  //     const data = await response.json();
+  //     if (response.status !== 200) {
+  //       throw (
+  //         data.error ||
+  //         new Error(`Request failed with status ${response.status}`)
+  //       );
+  //     }
 
-      setResult(data.result);
-    } catch (error) {
-      // Consider implementing your own error handling logic here
-      console.error(error);
-      alert(error.message);
-    }
-  }
+  //     setResult(data.result);
+  //   } catch (error) {
+  //     // Consider implementing your own error handling logic here
+  //     console.error(error);
+  //     alert(error.message);
+  //   }
+   }
 
 
   
-  console.log(result)
+  // console.log(result)
 
   return (
     <div className="">

@@ -2,7 +2,7 @@ import axios from "axios";
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import SearchForm from "../components/SearchForm";
-import ChannelCard from "../components/ChannelCard";
+import SampleChannelCard from "../components/SampleChannelCard";
 import CardDisplay from "../components/CardDisplay";
 import ErrorMessage from "../components/ErrorMessage";
 
@@ -26,7 +26,7 @@ export default function ChannelSearch({ channelData }) {
 
   const listOfPodcastCards = defaultList ? (
     defaultList.map((item) => (
-      <ChannelCard
+      <SampleChannelCard
         key={item.id}
         subscriberCount={item.statistics.subscriberCount}
         videoCount={item.statistics.videoCount}
