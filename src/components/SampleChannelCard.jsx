@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Loader from "./Loader";
 
-function ChannelCard(props) {
+function SampleChannelCard(props) {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const subscriberCount = Number(props.subscriberCount).toLocaleString();
@@ -68,7 +68,7 @@ function ChannelCard(props) {
             ) : (
               <button
                 type="submit"
-                className="rounded-lg border border-violet-900 bg-violet-700 p-2 text-sm font-semibold text-neutral-100 shadow-sm shadow-violet-900"
+                className="rounded-md border border-violet-900 bg-violet-700 p-2 text-sm font-semibold text-neutral-100 shadow-sm shadow-violet-900"
               >
                 View Stats
               </button>
@@ -80,4 +80,4 @@ function ChannelCard(props) {
   );
 }
 
-export default ChannelCard;
+export default SampleChannelCard;
