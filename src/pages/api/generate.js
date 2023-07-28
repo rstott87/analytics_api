@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     const completion = await openai.createCompletion({
       model: "davinci",
       prompt: generatePrompt(videoData),
-      temperature: 0.3
+      temperature: 0.8
     });
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch (error) {
@@ -40,8 +40,8 @@ export default async function handler(req, res) {
 }
 
 function generatePrompt(videoData) {
-  return `I'm going to give you a an array of data from the latest videos on a single YouTube channel. The data will include number of video likes on the video, date of the video, and number of comments. I want you to analyze and report on any trends that you see.
+  return `I'm going to give you some data. You will reply with a summary of the data in simple language.
 
 Channel Data: ${videoData}
-Your Summary:`;
+Your Summary: `;
 }
