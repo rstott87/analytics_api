@@ -17,7 +17,7 @@ function FullDataChannelCard(props) {
         alt="Picture of the author"
       />
       <p className=" text-clip text-3xl font-bold">{props.title}</p>
-      <div className="grid grid-cols-3 border-b-2 border-slate-600 gap-5 py-4">
+      <div className="grid grid-cols-3 gap-5 border-b-2 border-slate-600 py-4">
         <StatCard
           title={"Subscribers"}
           count={props.subscriberCount}
@@ -26,8 +26,11 @@ function FullDataChannelCard(props) {
         <StatCard title={"Uploads"} count={props.videoCount} percent={"8"} />
         <StatCard title={"Views"} count={props.viewCount} percent={"15"} />
       </div>
-      <AnalysisSummary dataVideos={props.dataVideos}/>
-    
+      <AnalysisSummary
+        dataVideos={props.dataVideos}
+        videoIdForComments={props.videoIdForComments}
+      />
+
       <VideosContainer
         playListId={props.playListId}
         dataPlaylist={props.dataPlaylist}

@@ -9,13 +9,12 @@ export default function AnalysisSummary(props) {
       likeCount: item.statistics.likeCount,
       commentCount: item.statistics.commentCount,
       publishedAt: item.snippet.publishedAt,
-      title: item.snippet.title,
+      title: item.snippet.title
     }));
-  
-    setAnalysis(true);
-  
 
-    console.log(JSON.stringify(videoData))
+    setAnalysis(true);
+
+    console.log(JSON.stringify(videoData));
 
     // try {
     //   const response = await fetch("/api/generate", {
@@ -40,10 +39,8 @@ export default function AnalysisSummary(props) {
     //   console.error(error);
     //   alert(error.message);
     // }
-   }
+  }
 
-
-  
   // console.log(result)
 
   return (

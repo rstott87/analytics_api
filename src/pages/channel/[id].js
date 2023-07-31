@@ -52,6 +52,10 @@ export default function Channel({ dataChannels, dataPlayList, dataVideos }) {
   const playListId =
     dataChannels.items[0].contentDetails.relatedPlaylists.uploads;
   console.log(dataVideos);
+  
+  const videoIdForComments = dataVideos.items[0].id
+  console.log(videoIdForComments)
+ 
 
   return (
     <div className="flex w-full flex-col items-center">
@@ -65,6 +69,7 @@ export default function Channel({ dataChannels, dataPlayList, dataVideos }) {
           ></meta>
         </Head>
         <FullDataChannelCard
+          videoIdForComments={videoIdForComments}
           dataChannels={dataChannels}
           dataPlayList={dataPlayList}
           dataVideos={dataVideos}
