@@ -37,7 +37,7 @@ function SampleChannelCard(props) {
   };
 
   return (
-    <li className="rounded-lg border border-slate-900 bg-gradient-to-bl from-slate-800 px-3 pb-4 text-slate-300 shadow-md shadow-violet-900">
+    <li className="rounded-lg border border-slate-900 bg-gradient-to-bl from-slate-800 px-3 pb-3 text-slate-300 shadow-md shadow-violet-900">
       {/* {isLoading && <Loader />} */}
 
       <div className=" flex items-center justify-start py-2">
@@ -55,10 +55,10 @@ function SampleChannelCard(props) {
       <div>
         <div className="flex items-center justify-between">
           <div className="pt-1">
-            <p className="text-center text-sm font-semibold text-neutral-100">
+            <p className="text-center text-sm font-semibold text-neutral-400">
               Subscribers
             </p>
-            <p className="text-sm font-semibold text-neutral-300">
+            <p className="text-sm font-semibold text-neutral-400">
               {subscriberCount}
             </p>
           </div>
@@ -68,7 +68,7 @@ function SampleChannelCard(props) {
             ) : (
               <button
                 type="submit"
-                className="rounded-md border border-violet-900 bg-violet-700 p-2 text-sm font-semibold text-neutral-100 shadow-sm shadow-violet-900"
+                className="rounded-md border border-violet-900 bg-violet-800 p-2 text-sm font-semibold text-neutral-100 shadow-sm shadow-violet-900"
               >
                 View Stats
               </button>
