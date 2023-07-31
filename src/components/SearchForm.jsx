@@ -47,8 +47,11 @@ function SearchForm(props) {
 
   return (
     <div>
+    <div className="px-8 py-4">
+      <p className="text-neutral-500 text-center font-semibold">{`To begin, enter a YouTube channel ID, or get started with one of our example channels below.`}</p>
+    </div>
       <form
-        className=" flex flex-col gap-3 rounded-lg px-8 py-14 shadow-violet-900"
+        className=" flex flex-col gap-3 rounded-lg p-8 pb-12 shadow-violet-900"
         onSubmit={handleSubmit}
       >
         <input
@@ -63,7 +66,7 @@ function SearchForm(props) {
         />
         <button
           type="submit"
-          className="rounded-lg border border-blue-500 bg-blue-600 p-1 text-lg font-semibold text-neutral-100 shadow-md shadow-violet-800"
+          className="rounded-lg bg-blue-600 p-1 text-lg font-semibold text-neutral-100 shadow-sm shadow-violet-900"
           value="Search"
         >
           {isLoading ? <Loader /> : "Search"}
