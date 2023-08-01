@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function AnalysisSummary(props) {
   const [result, setResult] = useState("");
   const [analysis, setAnalysis] = useState(false);
+  const commentsOnVideo = props.commentsOnVideo
 
   async function HandleGetAnalysisClick() {
     const videoData = props.dataVideos.items.map((item) => ({
@@ -15,30 +16,31 @@ export default function AnalysisSummary(props) {
     setAnalysis(true);
 
     console.log(JSON.stringify(videoData));
+    console.log(JSON.stringify(commentsOnVideo));
 
-    // try {
-    //   const response = await fetch("/api/generate", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({ videoData })
-    //   });
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ videoData, commentsOnVideo })
+      });
 
-    //   const data = await response.json();
-    //   if (response.status !== 200) {
-    //     throw (
-    //       data.error ||
-    //       new Error(`Request failed with status ${response.status}`)
-    //     );
-    //   }
+      const data = await response.json();
+      if (response.status !== 200) {
+        throw (
+          data.error ||
+          new Error(`Request failed with status ${response.status}`)
+        );
+      }
 
-    //   setResult(data.result);
-    // } catch (error) {
-    //   // Consider implementing your own error handling logic here
-    //   console.error(error);
-    //   alert(error.message);
-    // }
+      setResult(data.result);
+    } catch (error) {
+      // Consider implementing your own error handling logic here
+      console.error(error);
+      alert(error.message);
+    }
   }
 
   // console.log(result)
@@ -49,8 +51,7 @@ export default function AnalysisSummary(props) {
         <div>
           <p className="p-2 text-2xl">{"AI-Generated Report"}</p>
           <div className="text-neutral-500">
-            {`
-          The videos seem to cover diverse topics, ranging from serious issues like uncontacted tribes and military aid to lighter topics like cartoons and sports. Please note that this report is based solely on the data provided, and additional context and analysis may be required for a comprehensive understanding of the YouTube channel's performance and audience engagement.`}
+            {result}
           </div>
         </div>
       ) : (

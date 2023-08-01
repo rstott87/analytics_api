@@ -4,7 +4,6 @@ import VideosContainer from "./VideosContainer";
 import AnalysisSummary from "./AnalysisSummary";
 import StatisticsChart from "./charts/StatisticsChart";
 
-
 function FullDataChannelCard(props) {
   return (
     <div className="mb-6 flex flex-col items-center gap-3 rounded-lg border border-violet-950 bg-gradient-to-l from-slate-900 px-4 py-8 text-center text-neutral-300 shadow-lg shadow-blue-900 ">
@@ -28,7 +27,7 @@ function FullDataChannelCard(props) {
       </div>
       <AnalysisSummary
         dataVideos={props.dataVideos}
-        videoIdForComments={props.videoIdForComments}
+        commentsOnVideo={props.commentsOnVideo}
       />
 
       <VideosContainer
