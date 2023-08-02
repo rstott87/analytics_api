@@ -4,6 +4,6 @@ import React from "react";
 
 export default function Divider() {
     return (
-        <div className="border-b-2 border-neutral-500 mb-2 w-5/6"> </div>
+        <div className="border-b-2 border-neutral-500 mb-4 w-5/6"> </div>
     );
     }

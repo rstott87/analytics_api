@@ -50,16 +50,16 @@ export default function AnalysisSummary(props) {
       {analysis ? (
         <div>
           <p className="p-2 text-2xl">{"AI-Generated Report"}</p>
-          <div className="whitespace-break-spaces font-bold text-neutral-400">
+          <div className="whitespace-break-spaces font-bold text-neutral-400 text-center">
             {result.content}
           </div>
         </div>
       ) : (
         <button
           onClick={HandleGetAnalysisClick}
-          className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+          className="rounded-lg bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
         >
-          Run Report
+          {"Run Report Using AI"}
         </button>
       )}
       {loading && <Loader />}

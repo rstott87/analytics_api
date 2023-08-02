@@ -27,7 +27,7 @@ export default async function handler(req, res) {
       {
         role: "user",
         content:
-          `Here is data on a YouTube video's comments. Give me a brief summary on what the youtube video could be based on the comments: ${JSON.stringify(commentData)}`
+          `Run a data analysis on this set of data from youtube comments on a specific video. Include a brief paragraph summarizing any trends. Data: ${JSON.stringify(commentData)}`
       }
     ],
     temperature: .8,
