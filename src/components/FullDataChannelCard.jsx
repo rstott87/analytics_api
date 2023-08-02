@@ -1,7 +1,8 @@
 import Image from "next/image";
 import StatCard from "./StatCard";
-import VideosContainer from "./VideosContainer";
+import VideosContainer from "./LatestUploadsContainer";
 import AnalysisSummary from "./AnalysisSummary";
+import Divider from "./UI/Divder";
 import StatisticsChart from "./charts/StatisticsChart";
 
 function FullDataChannelCard(props) {
@@ -16,7 +17,7 @@ function FullDataChannelCard(props) {
         alt="Picture of the author"
       />
       <p className=" text-clip text-3xl font-bold">{props.title}</p>
-      <div className="grid grid-cols-3 gap-5 border-b-2 border-slate-600 py-4">
+      <div className="grid grid-cols-3 gap-5 py-3">
         <StatCard
           title={"Subscribers"}
           count={props.subscriberCount}
@@ -25,11 +26,11 @@ function FullDataChannelCard(props) {
         <StatCard title={"Uploads"} count={props.videoCount} percent={"8"} />
         <StatCard title={"Views"} count={props.viewCount} percent={"15"} />
       </div>
+      <Divider />
       <AnalysisSummary
         dataVideos={props.dataVideos}
         commentsOnVideo={props.commentsOnVideo}
       />
-
       <VideosContainer
         playListId={props.playListId}
         dataPlaylist={props.dataPlaylist}

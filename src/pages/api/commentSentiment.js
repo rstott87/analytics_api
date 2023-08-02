@@ -22,20 +22,21 @@ export default async function handler(req, res) {
       {
         role: "system",
         content:
-          "You are a helpful YouTube analytics website that helps people understand the data on youtube videos better. "
+          "You are a helpful YouTube analytics website that helps people, mainly creators and advertisers, understand the data on YouTube videos better."
       },
       {
         role: "user",
         content:
-          `Here is a data on the comments of a youtube video. Choose three comments to analyze and report. The data is as follows: ${JSON.stringify(commentData)}`
+          `Here is data on a YouTube video's comments. Give me a brief summary on what the youtube video could be based on the comments: ${JSON.stringify(commentData)}`
       }
     ],
     temperature: .8,
-    max_tokens: 2581,
+    max_tokens: 2500,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0
   });
   console.log(completion.data.choices[0].message);
-  res.status(200).json({ result: completion.data.choices[0].message });
+  console.log(completion.data.usage)
+  res.status(200).json({ result: completion.data.choices[0].message, usage: completion.data.usage});
 }

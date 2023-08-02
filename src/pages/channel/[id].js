@@ -59,7 +59,6 @@ export default function Channel({ dataChannels, dataPlayList, dataVideos, dataCo
   const playListId =
     dataChannels.items[0].contentDetails.relatedPlaylists.uploads;
   // array of objects of comments that includes only comment text, like count, and replies, and date 
-  console.log(dataComments)
   const commentsArray = dataComments.items.map((item) => {
     return {
       commentText: item.snippet.topLevelComment.snippet.textDisplay,
