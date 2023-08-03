@@ -6,6 +6,20 @@ import Divider from "./UI/Divder";
 import StatisticsChart from "./charts/StatisticsChart";
 
 function FullDataChannelCard(props) {
+  
+  //function that creates a single object from props related to channel data
+
+  const channelData = {
+    title: props.title,
+    channelPhoto: props.channelPhoto,
+    subscriberCount: props.subscriberCount,
+    videoCount: props.videoCount,
+    viewCount: props.viewCount,
+    description: props.description
+  };
+    
+  console.log(channelData);
+
   return (
     <div className="mb-6 flex flex-col items-center gap-3 rounded-lg border border-violet-950 bg-gradient-to-l from-slate-900 px-4 py-8 text-center text-neutral-300 shadow-lg shadow-blue-900 ">
       <Image
@@ -28,6 +42,7 @@ function FullDataChannelCard(props) {
       </div>
       <Divider />
       <AnalysisSummary
+        channelData={channelData}
         dataVideos={props.dataVideos}
         commentsOnVideo={props.commentsOnVideo}
       />

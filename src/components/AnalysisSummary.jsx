@@ -6,10 +6,20 @@ export default function AnalysisSummary(props) {
   const [analysis, setAnalysis] = useState(false);
   const [loading, setLoading] = useState(false);
   const commentsOnVideo = props.commentsOnVideo;
+  const channelData = props.channelData;
+  const dataVideos = props.dataVideos;
+
+// combine one stringified json object from commentsOnVideo, channelData, and dataVideos
+ 
+const combinedData ={ commentsOnVideo};
+
+console.log(combinedData);
 
   async function HandleGetAnalysisClick() {
     setAnalysis(true);
     setLoading(true);
+    console.log(channelData);
+    console.log(dataVideos);
     console.log(commentsOnVideo);
     try {
       const response = await fetch("/api/commentSentiment", {
@@ -17,7 +27,7 @@ export default function AnalysisSummary(props) {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ commentsOnVideo })
+        body: JSON.stringify({ combinedData })
       });
       const data = await response.json();
       console.log(data);

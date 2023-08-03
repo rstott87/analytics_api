@@ -15,7 +15,8 @@ export default async function handler(req, res) {
     });
     return;
   }
-  const commentData = req.body.commentsOnVideo || "";
+  const combinedData = req.body.combinedData || "";
+  // const commentData = req.body.commentsOnVideo || "";
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [
@@ -27,7 +28,7 @@ export default async function handler(req, res) {
       {
         role: "user",
         content:
-          `Run a data analysis on this set of data from youtube comments on a specific video. Include a brief paragraph summarizing any trends. Data: ${JSON.stringify(commentData)}`
+          `Hello please run an analysis on this data: ${JSON.stringify(combinedData)}`
       }
     ],
     temperature: .8,

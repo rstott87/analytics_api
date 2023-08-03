@@ -13,8 +13,7 @@ function LatestUploadsContainer(props) {
         views={item.statistics.viewCount || 0}
         comments={item.statistics.commentCount || 0}
         title={item.snippet.title}
-        date={item.snippet.publishedAt }
-        dataVideos={props.dataVideos }
+        date={item.snippet.publishedAt}
         key={item.id}
       />
     ));
