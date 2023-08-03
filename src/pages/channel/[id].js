@@ -76,6 +76,7 @@ export default function Channel({
       date: item.snippet.topLevelComment.snippet.publishedAt
     };
   });
+  
   return (
     <div className="flex w-full flex-col items-center">
       <div className="_container w-full max-w-md gap-4 p-4">

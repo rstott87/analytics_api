@@ -1,6 +1,6 @@
 import Image from "next/image";
 import StatCard from "./StatCard";
-import VideosContainer from "./LatestUploadsContainer";
+import LatestuploadsContainer from "./LatestuploadsContainer";
 import AnalysisSummary from "./AnalysisSummary";
 import Divider from "./UI/Divder";
 import StatisticsChart from "./charts/StatisticsChart";
@@ -17,7 +17,7 @@ function FullDataChannelCard(props) {
         alt="Picture of the author"
       />
       <p className=" text-clip text-3xl font-bold">{props.title}</p>
-      <div className="grid grid-cols-3 gap-5 py-3">
+      <div className="grid grid-cols-3 gap-5 py-4">
         <StatCard
           title={"Subscribers"}
           count={props.subscriberCount}
@@ -31,7 +31,7 @@ function FullDataChannelCard(props) {
         dataVideos={props.dataVideos}
         commentsOnVideo={props.commentsOnVideo}
       />
-      <VideosContainer
+      <LatestuploadsContainer
         playListId={props.playListId}
         dataPlaylist={props.dataPlaylist}
         dataVideos={props.dataVideos}
