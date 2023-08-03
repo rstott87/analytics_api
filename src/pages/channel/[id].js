@@ -76,8 +76,6 @@ export default function Channel({
       date: item.snippet.topLevelComment.snippet.publishedAt
     };
   });
-  console.log(commentsArray);
-
   return (
     <div className="flex w-full flex-col items-center">
       <div className="_container w-full max-w-md gap-4 p-4">
@@ -89,9 +87,9 @@ export default function Channel({
             key="desc"
           ></meta>
         </Head>
+    
         <FullDataChannelCard
           commentsOnVideo={commentsArray}
-          dataChannels={dataChannels}
           dataPlayList={dataPlayList}
           dataVideos={dataVideos}
           playListId={playListId}

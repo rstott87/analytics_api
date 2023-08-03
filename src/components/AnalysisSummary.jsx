@@ -8,13 +8,6 @@ export default function AnalysisSummary(props) {
   const commentsOnVideo = props.commentsOnVideo;
 
   async function HandleGetAnalysisClick() {
-    const videoData = props.dataVideos.items.map((item) => ({
-      likeCount: item.statistics.likeCount,
-      commentCount: item.statistics.commentCount,
-      publishedAt: item.snippet.publishedAt,
-      title: item.snippet.title
-    }));
-
     setAnalysis(true);
     setLoading(true);
     console.log(commentsOnVideo);
@@ -57,9 +50,9 @@ export default function AnalysisSummary(props) {
       ) : (
         <button
           onClick={HandleGetAnalysisClick}
-          className="rounded-lg bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+          className="rounded-lg bg-blue-600 px-5 py-3 font-bold text-neutral-100 hover:bg-blue-700"
         >
-          {"Run Report Using AI"}
+          {"RUN REPORT"}
         </button>
       )}
       {loading && <Loader />}
