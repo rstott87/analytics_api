@@ -23,12 +23,12 @@ export default async function handler(req, res) {
       {
         role: "system",
         content:
-          "You are a helpful YouTube analytics website that helps people, mainly creators and advertisers, understand the data on YouTube videos better."
+          "You are a helpful YouTube analytics website that helps people, mainly creators and advertisers, understand the data on YouTube videos better. You will receive data in JSON format and you will need to run an analysis on it."
       },
       {
         role: "user",
         content:
-          `Hello please run an analysis on this data: ${JSON.stringify(combinedData)}`
+          `Hello please run an analysis on this data. Try to be brief: ${JSON.stringify(combinedData)}`
       }
     ],
     temperature: .8,

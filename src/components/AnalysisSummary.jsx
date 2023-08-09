@@ -11,7 +11,7 @@ export default function AnalysisSummary(props) {
 
 // combine one stringified json object from commentsOnVideo, channelData, and dataVideos
  
-const combinedData ={ commentsOnVideo};
+const combinedData ={commentsOnVideo};
 
 console.log(combinedData);
 
