@@ -13,7 +13,15 @@ function Video(props) {
   const clickHandler = () => {
     router.push({
       pathname: "/video/[id]",
-      query: { id: props.id, title: title, likes: likes, views: views, comments: comments, date: date }
+      query: {
+        id: props.id,
+        title: title,
+        likes: likes,
+        views: views,
+        comments: comments,
+        date: date
+      },
+      asPath: `/video/${props.id}`
     });
   };
   return (
