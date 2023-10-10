@@ -19,6 +19,7 @@ function LatestUploadsContainer(props) {
       />
     ));
     setVideoList(listOfVideos);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
