@@ -14,10 +14,12 @@ function LatestUploadsContainer(props) {
         comments={item.statistics.commentCount || 0}
         title={item.snippet.title}
         date={item.snippet.publishedAt}
+        id={item.id}
         key={item.id}
       />
     ));
     setVideoList(listOfVideos);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

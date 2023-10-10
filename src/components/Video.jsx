@@ -1,14 +1,34 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import VideoStatLeaf from "./VideoStatLeaf";
 
 function Video(props) {
+  const router = useRouter();
   const likes = Number(props.likes).toLocaleString();
   const comments = Number(props.comments).toLocaleString();
   const views = Number(props.views).toLocaleString();
   const date = new Date(props.date).toLocaleDateString();
   const title = props.title;
+  // click handler will route to video page with id
+  const clickHandler = () => {
+    router.push({
+      pathname: "/video/[id]",
+      query: {
+        id: props.id,
+        title: title,
+        likes: likes,
+        views: views,
+        comments: comments,
+        date: date
+      },
+      asPath: `/video/${props.id}`
+    });
+  };
   return (
-    <li className=" flex flex-col border-b border-b-violet-700 px-2 pb-1">
+    <li
+      onClick={clickHandler}
+      className=" flex flex-col border-b border-b-violet-700 px-2 pb-1"
+    >
       {/* <Image
         className="rounded-lg"
         src={props.thumbnail}
@@ -17,7 +37,7 @@ function Video(props) {
         alt="thumbnail from youtube video"
       /> */}
 
-      <h3 className="line-clamp-1 text-clip text-left text-sm font-semibold">
+      <h3 className="line-clamp-1 text-clip text-left text-sm font-bold">
         {title}
       </h3>
       <div className="grid w-full grid-cols-4 gap-2 py-1">

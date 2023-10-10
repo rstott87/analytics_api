@@ -1,6 +1,6 @@
 import Image from "next/image";
 import StatCard from "./StatCard";
-import LatestuploadsContainer from "./LatestuploadsContainer";
+import LatestuploadsContainer from "./LatestUploadsContainer";
 import AnalysisSummary from "./AnalysisSummary";
 import Divider from "./UI/Divder";
 import StatisticsChart from "./charts/StatisticsChart";
