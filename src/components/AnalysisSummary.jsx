@@ -53,7 +53,7 @@ console.log(combinedData);
       {analysis ? (
         <div>
           <p className="p-2 text-2xl">{"AI-Generated Report"}</p>
-          <div className="whitespace-break-spaces font-bold text-neutral-400 text-center">
+          <div className="px-4 whitespace-break-spaces text-left font-semibold text-neutral-400">
             {result.content}
           </div>
         </div>
